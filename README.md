@@ -2,10 +2,10 @@
 ## Where Culture Meets Adventure
 
 ## Logo:
-![alt text](<Untitled design.png>)
+![Pamana Adventures Logo](images/logo.png)
 
 ## Description
-Pamana Adventures, your ultimate travel companion for exploring the wonders of the Philippines. From pristine beaches and lush mountains to lively festivals and rich cultural heritage, our website is your one stop tour guide through the islands’ destinations of the Pear of the Orient Seas. Every journey is designed to connect you not only with stunning landscapes, but also with the stories, traditions, and history that make the Philippines one of a kind.
+Pamana Adventures, your ultimate travel companion for exploring the wonders of the Philippines. From pristine beaches and lush mountains to lively festivals and rich cultural heritage, our website is your one stop tour guide through the islands’ destinations of the Pearl of the Orient Seas. Every journey is designed to connect you not only with stunning landscapes, but also with the stories, traditions, and history that make the Philippines one of a kind.
 
 In our website you can explore regional tourist attractions, uncover hidden gems, foodie trips, and plan your adventures with helpful tips and interactive guides. Whether you’re a first-time traveler or a seasoned explorer, Pamana Adventures ensures every trip is meaningful, memorable, and full of cultural discovery. With Pamana Adventures, you can feel that it is truly more fun in the Philippines. 
 
@@ -57,23 +57,23 @@ In our website you can explore regional tourist attractions, uncover hidden gems
 
 ### Sources Page:
 
-- **Interactive Links:** All sources and references used to create the website will be listed on this page. Hovering over a link will trigger a color change to indicate interactivity and improve visual engagement.
+- **Interactive Links:** All sources and references used to create the website will be listed on this page. Hovering over a link will trigger a color change to indicate interactivity.
 
 ******
 ### Wireframe
 #### Home Page:
-![alt text](1.png)
+![alt text](images/1.png)
 #### Tourist Spots:
-![alt text](2.png)
+![alt text](images/2.png)
 When the location icon is clicked:
-![alt text](Wireframe.png)
+![alt text](images/Wireframe.png)
 #### Culture:
-![alt text](4.png)
+![alt text](images/4.png)
 When the image is clicked:
-![alt text](5.png)
-#### Food Reccommendations:
-![alt text](6.png)
+![alt text](images/5.png)
+#### Food Recommendations:
+![alt text](images/6.png)
 #### Travel Guide:
-![alt text](7.png)
+![alt text](images/7.png)
 #### Sources:
-![alt text](8.png)
+![alt text](images/8.png)
