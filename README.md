@@ -2,7 +2,7 @@
 ## Where Culture Meets Adventure
 
 ## Logo:
-![Pamana Adventures Logo](images/logo.png)
+![Pamana Adventures Logo](assets/logo.png)
 
 ## Description
 Pamana Adventures, your ultimate travel companion for exploring the wonders of the Philippines. From pristine beaches and lush mountains to lively festivals and rich cultural heritage, our website is your one stop tour guide through the islands’ destinations of the Pearl of the Orient Seas. Every journey is designed to connect you not only with stunning landscapes, but also with the stories, traditions, and history that make the Philippines one of a kind.
@@ -62,18 +62,18 @@ In our website you can explore regional tourist attractions, uncover hidden gems
 ******
 ### Wireframe
 #### Home Page:
-![alt text](images/1.png)
+![alt text](assets/1.png)
 #### Tourist Spots:
-![alt text](images/2.png)
+![alt text](assets/2.png)
 When the location icon is clicked:
-![alt text](images/Wireframe.png)
+![alt text](assets/Wireframe.png)
 #### Culture:
-![alt text](images/4.png)
+![alt text](assets/4.png)
 When the image is clicked:
-![alt text](images/5.png)
+![alt text](assets/5.png)
 #### Food Recommendations:
-![alt text](images/6.png)
+![alt text](assets/6.png)
 #### Travel Guide:
-![alt text](images/7.png)
+![alt text](assests/7.png)
 #### Sources:
-![alt text](images/8.png)
+![alt text](assets/8.png)
