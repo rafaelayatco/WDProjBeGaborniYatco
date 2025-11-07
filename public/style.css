@@ -75,7 +75,7 @@ nav {
   color: yellow;
 }
 
-/* Active tab */
+/* Active tab (when you are on the tab it will stay that way)*/
 .nav a.active {
   color: yellow;
 }
