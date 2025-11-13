@@ -1,3 +1,29 @@
+
+@font-face {
+  font-family: 'Kawit Condensed';
+  src: url('../assets/fonts/KawitFree-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gabriel Sans';
+  src: url('../assets/fonts/GabrielSans-Trial-Medium.ttf') format('truetype');
+}
+
+/* --- Header Text Styles --- */
+header h1 {
+  font-family: 'Kawit Condensed', sans-serif;
+  font-size: 5rem;
+  color: white;
+  -webkit-text-stroke: 0.1px #cc3300; /* optional text outline */
+}
+
+header h3 {
+  font-family: 'Gabriel Sans', sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* subtle outline look */
+}
+
 /* General body styling */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -28,11 +54,10 @@ header {
 
 .top h1 {
   color: white;
-  font-size: 1.8rem;
   margin: 0;
   text-align: center;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.1;
 }
 
 .top h3 {
@@ -41,13 +66,13 @@ header {
   margin: 0;
   text-align: center;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1;
 }
 
 /* Navigation bar */
 nav {
   background-color: #71b7c7;
-  padding: 30px;
+  padding: 50px;
   text-align: center;
 }
 
@@ -62,11 +87,26 @@ nav {
 }
 
 .nav a {
-  text-decoration: underline;
+  display: flex;           
+  align-items: center;     
+  text-decoration: none;
   color: white;
   font-weight: 500;
   padding: 8px 12px;
   border-radius: 6px;
+  transition: all 0.3s ease;
+  gap: 12px;               
+}
+
+.nav a span {
+  text-decoration: underline;  
+  font-size: 1.3rem;
+}
+
+/* Icon style */
+.nav a i {
+  font-size: 1.3rem;
+  color: white;
   transition: all 0.3s ease;
 }
 
@@ -75,15 +115,52 @@ nav {
   color: yellow;
 }
 
-/* Active tab (when you are on the tab it will stay that way)*/
+.nav a:hover i {
+  transform: scale(1.2);
+  color: yellow;
+}
+
 .nav a.active {
   color: yellow;
+}
+
+.nav a.active i {
+  color: yellow;
+  transform: scale(1.2);
 }
 
 /* Footer */
 footer {
   background-color: #256877;
-  padding: 30px;
+  padding:20px;
   text-align: center;
   color: white;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.footer-left p,
+.footer-center p,
+.footer-right p {
+  margin: 2px 0;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    margin: 5px 0;
+  }
+}
+
+

@@ -62,18 +62,18 @@ In our website you can explore regional tourist attractions, uncover hidden gems
 ******
 ### Wireframe
 #### Home Page:
-![alt text](assets/1.png)
+![alt text](assets/wireframe/1.png)
 #### Tourist Spots:
-![alt text](assets/2.png)
+![alt text](assets/wireframe/2.png)
 When the location icon is clicked:
-![alt text](assets/Wireframe.png)
+![alt text](assets/wireframe/Wireframe.png)
 #### Culture:
-![alt text](assets/4.png)
+![alt text](assets/wireframe/4.png)
 When the image is clicked:
-![alt text](assets/5.png)
+![alt text](assets/wireframe/5.png)
 #### Food Recommendations:
-![alt text](assets/6.png)
+![alt text](assets/wireframe/6.png)
 #### Travel Guide:
-![alt text](assests/7.png)
+![alt text](assests/wireframe/7.png)
 #### Sources:
-![alt text](assets/8.png)
+![alt text](assets/wireframe/8.png)
