@@ -1,42 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Project Webpage Homepage">
-  <meta name="keywords" content="HTML basic tags">
+  <meta name="description" content="Tourist Spots in the Philippines">
   <meta name="author" content="R YATCO">
 
-  <title>Pamana Adventures</title>
+  <title>Pamana Adventures Tourist Spots</title>
+
   <link rel="icon" type="image/x-icon" href="../assets/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 
   <style>
-      body {
-      margin: 0;
-      background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-                  url('../assets/homepage/background.jpg') no-repeat center center fixed;
-      background-size: cover;
+    /* ===== BACKGROUND VIDEO ===== */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
     }
 
     main h1, p {
       font-family: 'Gabriel Sans', sans-serif;
       margin: 5%;
+      text-align: justify;
     }
 
-    footer p {
-    font-family: 'Gabriel Sans', sans-serif;
-    margin: 0%
-  }
+    header, nav, main, footer {
+      position: relative;
+      z-index: 1;
+    }
 
+    /* ===== MAIN LAYOUT ===== */
+    .main-content {
+      display: flex;
+      gap: 40px;
+      margin: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    /* ===== TEXT PANEL ===== */
+    .text-panel {
+      background: rgba(255,255,255,0.9);
+      padding: 24px 28px;
+      border-radius: 14px;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      flex: 1;
+    }
+
+    /* ===== MAP ===== */
+    .map-container {
+      flex: 2;
+      min-width: 320px;
+    }
+
+    .map-container object {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== INFO PANEL ===== */
+    #info-panel {
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      width: 250px;
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      padding: 16px;
+      border-radius: 12px;
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+
+    #explore-btn {
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #explore-btn:hover {
+      background: #e63c3c;
+    }
+
+    /* ===== REGION DOTS ===== */
+    .region-dot {
+      fill: #ff4d4d;
+      cursor: pointer;
+      transition: transform 0.2s ease, fill 0.2s ease;
+    }
+
+    .region-dot:hover {
+      fill: #ffcc00;
+      transform: scale(1.5);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .main-content {
+        flex-direction: column;
+      }
+
+      .text-panel {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
-
 <body>
+
+  <!-- INFO PANEL -->
+  <div id="info-panel">
+    <h2 id="info-title"></h2>
+    <p id="info-desc"></p>
+    <button id="explore-btn">Explore Now</button>
+  </div>
+
+  <!-- BACKGROUND VIDEO -->
+  <video autoplay muted loop id="bg-video">
+    <source src="../assets/backgrounds/touristspotsdrone.mp4" type="video/mp4">
+  </video>
+  <div class="bg-overlay"></div>
+
+  <!-- HEADER -->
   <header>
     <div class="top">
-      <img src="../assets/logo.png" alt="Pamana Adventures Logo">
+      <img src="../assets/logo.png" alt="Pamana Adventures Logo" style="height:80px;">
       <div>
         <h1>Pamana Adventures</h1>
         <h3>Where Culture Meets Adventure</h3>
@@ -44,61 +146,67 @@
     </div>
   </header>
 
+  <!-- NAV -->
   <nav class="nav">
-    <a href="../index.html" class="active">
-      <i class="fa-solid fa-house"></i> <span>Home</span>
-    </a>
-    <a href="../public/touristspots.html">
-      <i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span>
-    </a>
-    <a href="../public/culture.html">
-      <i class="fa-solid fa-sun"></i> <span>Culture</span>
-    </a>
-    <a href="../public/food.html">
-      <i class="fa-solid fa-utensils"></i> <span>Food</span>
-    </a>
-    <a href="../public/travelguide.html">
-      <i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span>
-    </a>
-    <a href="../public/sources.html">
-      <i class="fa-solid fa-book"></i> <span>Sources</span>
-    </a>
+    <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="../public/touristspots.html" class="active"><i class="fa-solid fa-location-dot"></i> Tourist Spots</a>
+    <a href="../public/culture.html"><i class="fa-solid fa-sun"></i> Culture</a>
+    <a href="../public/food.html"><i class="fa-solid fa-utensils"></i> Food</a>
+    <a href="../public/travelguide.html"><i class="fa-solid fa-suitcase"></i> Travel Guide</a>
+    <a href="../public/sources.html"><i class="fa-solid fa-book"></i> Sources</a>
   </nav>
 
-
+  <!-- MAIN -->
   <main>
-    <h1>Tourist Spots</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+    <div class="main-content">
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+      <div class="text-panel">
+        <!-- Your text stays exactly as before -->
+        <h1>Tourist Spots</h1>
+        <p>
+          Welcome to our interactive guide to the Philippines, an archipelago of over 7,000 
+          islands where breathtaking natural wonders meet a rich, multi-layered history. 
+          From the emerald-green Banaue Rice Terraces in the north to the crystal-clear lagoons of Palawan 
+          and the world-famous white sands of Boracay, the Philippines offers a diverse landscape for every 
+          type of traveler. Whether you are looking to dive into the vibrant coral reefs of the Tubbataha Reef, 
+          trek through lush tropical jungles with hiking trips, or explore and do island hopping, 
+          there is an unforgettable experience waiting around every corner.
+        </p>
+        <p>
+          Our interactive map is designed to help you navigate this tropical paradise with ease. 
+          Click on any red dot on the map to explore some of the Philippines’ most iconic tourist destinations. 
+          Each location features a curated look at must-see landmarks, local activities, and with travel tips to help 
+          you plan in the other tabs for your perfect island-hopping adventure. Dive in and discover why millions of travelers fall in love 
+          with the warmth, beauty, and "endless summer" of the Philippines.
+        </p>
+      </div>
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+      <div class="map-container">
+        <object id="ph-map" type="image/svg+xml" data="../assets/interactiveelements/ph.svg"></object>
+      </div>
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-      </p>
+    </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-container">
-    <!-- Left: Social Media Text -->
-    <div class="footer-left">
-      <p>Follow us on Facebook | Instagram | Twitter | YouTube</p>
+      <div class="footer-left">
+        <p>Follow us on Facebook | Instagram | Twitter | YouTube</p>
+      </div>
+      <div class="footer-center">
+        <p>2025 Pamana Adventures. All Rights Reserved.</p>
+      </div>
+      <div class="footer-right">
+        <p><b>Contact Information</b></p>
+        <p>Email: b2029rmyatco@pshs.edu.ph</p>
+        <p>Email: b2029savgaborni@pshs.edu.ph</p>
+      </div>
     </div>
-
-    <!-- Center: Text -->
-    <div class="footer-center">
-      <p>2025 Pamana Adventures. All Rights Reserved.</p>
-    </div>
-
-    <!-- Right: Contact Info -->
-    <div class="footer-right">
-      <p><b>Contact Information</b></p>
-      <p>Email: b2029rmyatco@pshs.edu.ph</p>
-      <p>Email: b2029savgaborni@pshs.edu.ph</p>
-    </div>
-  </div>
   </footer>
+
+  <!-- EXTERNAL JS -->
+  <script src="map.js"></script>
+
 </body>
 </html>

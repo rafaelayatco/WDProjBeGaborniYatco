@@ -1,42 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Project Webpage Homepage">
-  <meta name="keywords" content="HTML basic tags">
-  <meta name="author" content="R YATCO">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pamana Adventures Homepage" />
+  <meta name="keywords" content="HTML, Culture, Travel, Philippines" />
+  <meta name="author" content="R YATCO" />
 
   <title>Pamana Adventures</title>
-  <link rel="icon" type="image/x-icon" href="assets/logo.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="../assets/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   <link rel="stylesheet" href="public/style.css">
 
-  <style>
-      body {
-      margin: 0;
-      background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-                  url('assets/homepage/background.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-
+<style>
     main h1, p {
       font-family: 'Gabriel Sans', sans-serif;
       margin: 5%;
     }
 
     footer p {
-    font-family: 'Gabriel Sans', sans-serif;
-    margin: 0%
-  }
+      font-family: 'Gabriel Sans', sans-serif;
+      margin: 0%;
+    }
 
-  </style>
+    #bg-video {
+      position: fixed;   /* stays in place */
+      top: 0;
+      left: 0;
+      width: 100vw;      /* full viewport width */
+      height: 100vh;     /* full viewport height */
+      object-fit: cover; /* crops to fill without stretching */
+      z-index: -1;       /* behind all content */
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        margin: 5px 0;
+      }
+    }
+
+    main {
+      display: flex;
+      gap: 30px;
+      margin: 5%;
+    }
+
+    main .content {
+      flex: 2;
+    }
+
+    main h1, main p {
+      margin: 0 0 15px 0;
+    }
+
+    .slideshow-container {
+      flex: 1;
+      max-width: 400px;
+      height: 420px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      align-self: flex-start;
+      text-align: center;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* ensures full image fits without cropping */
+      display: block;
+      margin: 0 auto;
+      background-color: rgba(255,255,255,0.85); /* fills empty space if needed */
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 10px;
+      color: #256877;
+      font-size: 22px;
+      font-weight: bold;
+      user-select: none;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .prev:hover, .next:hover { background: #256877; color: white; }
+
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      background-color: #717171;
+    }
+
+    footer {
+      background-color: #256877;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+      margin: 5px;
+    }
+
+    @media (max-width: 1000px) {
+      main { flex-direction: column; }
+    }
+</style>
+
 </head>
-
 <body>
+<video autoplay muted loop id="bg-video">
+  <source src="../assets/backgrounds/backgroundvid.mp4" type="video/mp4">
+</video>
+
   <header>
     <div class="top">
-      <img src="../assets/logo.png" alt="Pamana Adventures Logo">
+      <img src="../assets/logo.png" alt="Pamana Adventures Logo" style="height:80px;">
       <div>
         <h1>Pamana Adventures</h1>
         <h3>Where Culture Meets Adventure</h3>
@@ -45,60 +165,86 @@
   </header>
 
   <nav class="nav">
-    <a href="index.html" class="active">
-      <i class="fa-solid fa-house"></i> <span>Home</span>
-    </a>
-    <a href="public/touristspots.html">
-      <i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span>
-    </a>
-    <a href="../public/culture.html">
-      <i class="fa-solid fa-sun"></i> <span>Culture</span>
-    </a>
-    <a href="../public/food.html">
-      <i class="fa-solid fa-utensils"></i> <span>Food</span>
-    </a>
-    <a href="../public/travelguide.html">
-      <i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span>
-    </a>
-    <a href="../public/sources.html">
-      <i class="fa-solid fa-book"></i> <span>Sources</span>
-    </a>
+    <a href="index.html" class="active"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+    <a href="public/touristspots.html"><i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span></a>
+    <a href="public/culture.html"><i class="fa-solid fa-sun"></i> <span>Culture</span></a>
+    <a href="public/food.html"><i class="fa-solid fa-utensils"></i> <span>Food</span></a>
+    <a href="public/travelguide.html"><i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span></a>
+    <a href="public/sources.html"><i class="fa-solid fa-book"></i> <span>Sources</span></a>
   </nav>
 
-
   <main>
-    <h1>Home</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+    <div class="content">
+      <h1>Home: Welcome to Pamana Adventures</h1>
+      <p>Pamana Adventures, your ultimate travel companion for exploring the wonders of the Philippines. 
+        From pristine beaches and lush mountains to lively festivals and rich cultural heritage, 
+        our website is your one stop tour guide through the islands’ destinations of the Pear of the Orient Seas. 
+        Every journey is designed to connect you not only with stunning landscapes, but also with the stories, 
+        traditions, and history that make the Philippines one of a kind.</p>
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+      <br>
+      
+      <p>In our website you can explore regional tourist attractions, uncover hidden gems, foodie trips, 
+        and plan your adventures with helpful tips and interactive guides. Whether you’re a first-time traveler 
+        or a seasoned explorer, Pamana Adventures ensures every trip is meaningful, memorable, and full of cultural discovery. 
+        With Pamana Adventures, you can feel that it is truly more fun in the Philippines. </p>
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+    </div>
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+       <div class="slideshow-container">
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-      </p>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/tubbataha.webp"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/elnido.jpg"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/hondabay.webp"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/puertoprincesa.webp"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/hundredislands.jpg"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/banauericeterraces.jpeg"></a>
+      <a class="slide" href="touristspots.html"><img src="../assets/slides/chocolatehills.jpg"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/boracay.webp"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/siquijor.jpg"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/magellanscross.jpg"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/cloud9.webp"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/enchantedriver.jpg"></a>
+      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/mountapo.jpg"></a>
+
+      <!-- Controls -->
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+      <!-- Dots -->
+      <div class="dots">
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+        <span class="dot" onclick="goToSlide(4)"></span>
+        <span class="dot" onclick="goToSlide(5)"></span>
+        <span class="dot" onclick="goToSlide(6)"></span>
+        <span class="dot" onclick="goToSlide(7)"></span>
+        <span class="dot" onclick="goToSlide(8)"></span>
+        <span class="dot" onclick="goToSlide(9)"></span>
+        <span class="dot" onclick="goToSlide(10)"></span>
+        <span class="dot" onclick="goToSlide(11)"></span>
+        <span class="dot" onclick="goToSlide(12)"></span>
+        <span class="dot" onclick="goToSlide(13)"></span>
+      </div>
+    </div>
   </main>
 
   <footer>
     <div class="footer-container">
-    <!-- Left: Social Media Text -->
-    <div class="footer-left">
-      <p>Follow us on Facebook | Instagram | Twitter | YouTube</p>
+      <div class="footer-left"><p>Follow us on Facebook | Instagram | Twitter | YouTube</p></div>
+      <div class="footer-center"><p>2025 Pamana Adventures. All Rights Reserved.</p></div>
+      <div class="footer-right">
+        <p><b>Contact Information</b></p>
+        <p>Email: b2029rmyatco@pshs.edu.ph</p>
+        <p>Email: b2029savgaborni@pshs.edu.ph</p>
+      </div>
     </div>
-
-    <!-- Center: Text -->
-    <div class="footer-center">
-      <p>2025 Pamana Adventures. All Rights Reserved.</p>
-    </div>
-
-    <!-- Right: Contact Info -->
-    <div class="footer-right">
-      <p><b>Contact Information</b></p>
-      <p>Email: b2029rmyatco@pshs.edu.ph</p>
-      <p>Email: b2029savgaborni@pshs.edu.ph</p>
-    </div>
-  </div>
   </footer>
+
+  <script src="public/slideshowindex.js"></script>
+
+ 
+
 </body>
 </html>

@@ -33,7 +33,7 @@ body {
 
 /* Header */
 header {
-  background-color: #256877;
+  background-color: rgba(37, 104, 119, 0.8); /* only background is transparent */
   padding: 30px;
   text-align: center;
 }
@@ -71,7 +71,7 @@ header {
 
 /* Navigation bar */
 nav {
-  background-color: #71b7c7;
+  background-color: rgba(113, 183, 199, 0.8);
   padding: 50px;
   text-align: center;
 }
