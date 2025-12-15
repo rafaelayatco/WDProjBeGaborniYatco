@@ -1,23 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Project Webpage 1">
-  <meta name="keywords" content="HTML basic tags">
+  <meta name="description" content="Pamana Adventures Food">
   <meta name="author" content="R YATCO">
 
-  <title>Pamana Adventures</title>
+  <title>Pamana Adventures - Food</title>
   <link rel="icon" type="image/x-icon" href="../assets/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 
   <style>
+    /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .bg-overlay {
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.35);
+      z-index: -1;
+    }
+
+    main h1 {
+      text-align: center;
+      font-family: 'Gabriel Sans', sans-serif;
+      color: white;
+      margin-top: 40px;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    /* Carousel */
+    .food-carousel {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 20px;
+      justify-content: center;
+      scroll-behavior: smooth;
+    }
+
+    .food-item {
+      flex: 0 0 auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      border: 4px solid #ff4d4d;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      background-color: white;
+    }
+
+    .food-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .food-item.selected {
+      transform: scale(1.2);
+      border-color: #ffcc00;
+    }
+
+    /* Info Section */
+    #food-info {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    #food-info h2 {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+
+    #food-info p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .food-item {
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    /* Hide horizontal scrollbar but keep scroll */
+.food-carousel {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  padding: 40px 20px;
+  scroll-behavior: smooth;
+
+  /* Hide scrollbar (Chrome, Safari, Edge) */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / Edge */
+}
+
+.food-carousel::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
+}
+
 
   </style>
 </head>
-
 <body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="../assets/backgrounds/food.mp4" type="video/mp4">
+  </video>
+  <div class="bg-overlay"></div>
+
+  <!-- Header -->
   <header>
     <div class="top">
       <img src="../assets/logo.png" alt="Pamana Adventures Logo">
@@ -28,33 +137,209 @@
     </div>
   </header>
 
+  <!-- Navigation -->
   <nav class="nav">
-    <a href="../index.html">
-      <i class="fa-solid fa-house"></i> <span>Home</span>
-    </a>
-    <a href="touristspots.html">
-      <i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span>
-    </a>
-    <a href="culture.html">
-      <i class="fa-solid fa-sun"></i> <span>Culture</span>
-    </a>
-    <a href="food.html" class="active">
-      <i class="fa-solid fa-utensils"></i> <span>Food</span>
-    </a>
-    <a href="travelguide.html">
-      <i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span>
-    </a>
-    <a href="sources.html">
-      <i class="fa-solid fa-book"></i> <span>Sources</span>
-    </a>
+    <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="touristspots.html"><i class="fa-solid fa-location-dot"></i> Tourist Spots</a>
+    <a href="culture.html"><i class="fa-solid fa-sun"></i> Culture</a>
+    <a href="food.html" class="active"><i class="fa-solid fa-utensils"></i> Food</a>
+    <a href="travelguide.html"><i class="fa-solid fa-suitcase"></i> Travel Guide</a>
+    <a href="sources.html"><i class="fa-solid fa-book"></i> Sources</a>
   </nav>
 
   <main>
-    <h1>Food</h1>
+    <h1>Philippine Foods</h1>
+
+  
+    <div class="food-carousel" id="food-carousel">
+
+  <div class="food-item" data-title="Baker's Hill Hopia" 
+  data-desc="From Palawan, hopia is one of the many Filipino pastries that comes in different flavors, from classic monggo (mung bean) filling to creamy ube (purple yam).">
+    <img src="../assets/food/hopia.jpg" alt="Baker's Hill Hopia">
+  </div>
+
+  <div class="food-item" data-title="Sinigang" data-desc="A sour soup made with tamarind, vegetables, and pork, fish, or shrimp.">
+    <img src="../assets/food/sinigang.jpg" alt="Sinigang">
+  </div>
+
+  <div class="food-item" data-title="Lechon" data-desc="Whole roasted pig known for its crispy skin and juicy meat.">
+    <img src="../assets/food/lechon.jpg" alt="Lechon">
+  </div>
+
+  <div class="food-item" data-title="Kare-Kare" data-desc="A rich peanut-based stew with oxtail and vegetables.">
+    <img src="../assets/food/karekare.jpg" alt="Kare-Kare">
+  </div>
+
+  <div class="food-item" data-title="Pancit" data-desc="Stir-fried noodles symbolizing long life and prosperity.">
+    <img src="../assets/food/pancit.jpg" alt="Pancit">
+  </div>
+
+  <div class="food-item" data-title="Lumpia" data-desc="Crispy Filipino spring rolls filled with meat and vegetables.">
+    <img src="../assets/food/lumpia.jpg" alt="Lumpia">
+  </div>
+
+  <div class="food-item" data-title="Halo-Halo" data-desc="A famous Filipino dessert with shaved ice, milk, and mixed sweets.">
+    <img src="../assets/food/halohalo.jpg" alt="Halo-Halo">
+  </div>
+
+  <div class="food-item" data-title="Bulalo" data-desc="Beef marrow soup slow-cooked for a rich and hearty flavor.">
+    <img src="../assets/food/bulalo.jpg" alt="Bulalo">
+  </div>
+
+  <div class="food-item" data-title="Bicol Express" data-desc="Spicy pork stew cooked in coconut milk and chili peppers.">
+    <img src="../assets/food/bicolexpress.jpg" alt="Bicol Express">
+  </div>
+
+  <div class="food-item" data-title="Pinakbet" data-desc="A vegetable dish flavored with shrimp paste, common in Ilocos.">
+    <img src="../assets/food/pinakbet.jpg" alt="Pinakbet">
+  </div>
+
+  <div class="food-item" data-title="Chicken Inasal" data-desc="Grilled chicken marinated in calamansi and annatto oil.">
+    <img src="../assets/food/inasal.jpg" alt="Chicken Inasal">
+  </div>
+
+  <div class="food-item" data-title="Sisig" data-desc="Sizzling chopped pork mixed with onions and calamansi.">
+    <img src="../assets/food/sisig.jpg" alt="Sisig">
+  </div>
+
+  <div class="food-item" data-title="Laing" data-desc="Taro leaves cooked in coconut milk and spices.">
+    <img src="../assets/food/laing.jpg" alt="Laing">
+  </div>
+
+  <div class="food-item" data-title="Dinuguan" data-desc="Savory pork blood stew with vinegar and spices.">
+    <img src="../assets/food/dinuguan.jpg" alt="Dinuguan">
+  </div>
+
+  <div class="food-item" data-title="Bangus" data-desc="Milkfish dish, often grilled or fried.">
+    <img src="../assets/food/bangus.jpg" alt="Bangus">
+  </div>
+
+  <div class="food-item" data-title="Baker's Hill Hopia (Palawan)" 
+  data-desc="Hopia is one of the many Filipino pastries that comes in different flavors, from classic monggo (mung bean) filling to creamy ube (purple yam).">
+    <img src="../assets/food/hopia.jpg" alt="Baker's Hill Hopia">
+  </div>
+
+  <div class="food-item" data-title="Danggit Lamayo" 
+  data-desc="A combination of tangy vinegar, aromatic garlic, and spicy pepper, alongside a crispy texture. A local dish of Palawan favored by both locals and tourists.">
+    <img src="../assets/food/danggitlamayo.jpg" alt="Danggit Lamayo">
+  </div>
+
+  <div class="food-item" data-title="Lechon Kawali" 
+  data-desc="This dish is a combination of crunch and tender meat, made from pork belly that is deep-fried until it becomes crispy on the outside while tender on the inside.">
+    <img src="../assets/food/lechonkawali.jpg" alt="Lechon Kawali">
+  </div>
+
+  <div class="food-item" data-title="Patupat" 
+  data-desc="A type of local suman, intricately wrapped in a woven palm leaf pouch. It is made of sugar cane, coconut milk and glutinous rice- sometimes added with a saccharine flavor from brown sugar or molasses.">
+    <img src="../assets/food/patupat.jpg" alt="Patupat">
+  </div>
+
+  <div class="food-item" data-title="Tupig" 
+  data-desc="Another type of suman cooked on a hot grill of sugar and sweet rice grains, made of coconut shavings and coconut milk. .">
+    <img src="../assets/food/tupig.jpg" alt="Tupig">
+  </div>
+
+  <div class="food-item" data-title="Pigar-pigar" 
+  data-desc="A popular street food in Pangasinan, featuring thinly sliced beef seasoned with salt and pepper, tender cabbage and caramelized onions. Traditionally cooked in hot oil until brown and crisp at the edges, vegetables soaking up all the flavor.">
+    <img src="../assets/food/pigar-pigar.jpg" alt="Pigar-pigar">
+  </div>
+
+  <div class="food-item" data-title="Bibingka" data-desc="Rice cake traditionally cooked during Christmas season.">
+    <img src="../assets/food/bibingka.jpg" alt="Bibingka">
+  </div>
+
+  <div class="food-item" data-title="Kutsinta" data-desc="Sticky brown rice cake topped with grated coconut.">
+    <img src="../assets/food/kutsinta.jpg" alt="Kutsinta">
+  </div>
+
+  <div class="food-item" data-title="Palabok" data-desc="Rice noodles with shrimp sauce and toppings.">
+    <img src="../assets/food/palabok.jpg" alt="Palabok">
+  </div>
+
+  <div class="food-item" data-title="Mami" data-desc="Filipino noodle soup influenced by Chinese cuisine.">
+    <img src="../assets/food/mami.jpg" alt="Mami">
+  </div>
+
+  <div class="food-item" data-title="Arroz Caldo" data-desc="Rice porridge with chicken, ginger, and garlic.">
+    <img src="../assets/food/arrozcaldo.jpg" alt="Arroz Caldo">
+  </div>
+
+  <div class="food-item" data-title="Tokwa't Baboy" data-desc="Tofu and pork dish served with vinegar sauce.">
+    <img src="../assets/food/tokwatbaboy.jpg" alt="Tokwa't Baboy">
+  </div>
+
+  <div class="food-item" data-title="Ginataang Gulay" data-desc="Vegetables cooked in coconut milk.">
+    <img src="../assets/food/ginataangulay.jpg" alt="Ginataang Gulay">
+  </div>
+
+  <div class="food-item" data-title="Bopis" data-desc="Spicy pork lung dish popular in street food stalls.">
+    <img src="../assets/food/bopis.jpg" alt="Bopis">
+  </div>
+
+  <div class="food-item" data-title="Ukoy" data-desc="Crispy shrimp and vegetable fritters.">
+    <img src="../assets/food/ukoy.jpg" alt="Ukoy">
+  </div>
+
+  <div class="food-item" data-title="Batchoy" data-desc="Noodle soup with pork, liver, and chives.">
+    <img src="../assets/food/batchoy.jpg" alt="Batchoy">
+  </div>
+
+  <div class="food-item" data-title="Pochero" data-desc="Spanish-influenced stew with beef and vegetables.">
+    <img src="../assets/food/pochero.jpg" alt="Pochero">
+  </div>
+
+  <div class="food-item" data-title="Menudo" data-desc="Tomato-based pork stew with potatoes and carrots.">
+    <img src="../assets/food/menudo.jpg" alt="Menudo">
+  </div>
+
+  <div class="food-item" data-title="Afritada" data-desc="Meat stew cooked in tomato sauce with vegetables.">
+    <img src="../assets/food/afritada.jpg" alt="Afritada">
+  </div>
+
+  <div class="food-item" data-title="Caldereta" data-desc="Hearty meat stew with liver spread and cheese.">
+    <img src="../assets/food/caldereta.jpg" alt="Caldereta">
+  </div>
+
+  <div class="food-item" data-title="Giniling" data-desc="Ground meat dish with vegetables and tomato sauce.">
+    <img src="../assets/food/giniling.jpg" alt="Giniling">
+  </div>
+
+  <div class="food-item" data-title="Paksiw na Isda" data-desc="Fish cooked in vinegar and spices.">
+    <img src="../assets/food/paksiw.jpg" alt="Paksiw na Isda">
+  </div>
+
+</div>
+
+
+    <!-- Info Display -->
+    <div id="food-info">
+      <h2 id="food-title">Select a food to see details</h2>
+      <p id="food-desc">Click on a food plate above to view ingredients and recipe.</p>
+    </div>
   </main>
 
   <footer>
     <p>All Rights Reserved</p>
   </footer>
+
+  <script>
+    const foodItems = document.querySelectorAll('.food-item');
+    const infoTitle = document.getElementById('food-title');
+    const infoDesc = document.getElementById('food-desc');
+
+    foodItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove selected class from all
+        foodItems.forEach(i => i.classList.remove('selected'));
+
+        // Add selected class to clicked
+        item.classList.add('selected');
+
+        // Update info
+        infoTitle.textContent = item.dataset.title;
+        infoDesc.textContent = item.dataset.desc;
+      });
+    });
+  </script>
 </body>
 </html>

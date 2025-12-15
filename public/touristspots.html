@@ -70,15 +70,29 @@
     #info-panel {
       position: fixed;
       display: none;
-      top: 0;
-      left: 0;
-      width: 250px;
-      background: rgba(255,255,255,0.97);
-      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      top: 20px;
+      right: 20px;
+      width: 280px;
+      background: rgba(255,255,255,0.95);
       padding: 16px;
       border-radius: 12px;
       z-index: 999;
-      transition: all 0.3s ease;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    }
+
+    #close-panel {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+
+    #close-panel:hover {
+      color: #ff4d4d;
     }
 
     #explore-btn {
@@ -122,13 +136,6 @@
 </head>
 <body>
 
-  <!-- INFO PANEL -->
-  <div id="info-panel">
-    <h2 id="info-title"></h2>
-    <p id="info-desc"></p>
-    <button id="explore-btn">Explore Now</button>
-  </div>
-
   <!-- BACKGROUND VIDEO -->
   <video autoplay muted loop id="bg-video">
     <source src="../assets/backgrounds/touristspotsdrone.mp4" type="video/mp4">
@@ -156,31 +163,35 @@
     <a href="../public/sources.html"><i class="fa-solid fa-book"></i> Sources</a>
   </nav>
 
+  <!-- INFO PANEL -->
+  <div id="info-panel">
+    <button id="close-panel">✕</button>
+    <h2 id="info-title"></h2>
+    <p id="info-desc"></p>
+    <button id="explore-btn">Explore Now</button>
+  </div>
+
   <!-- MAIN -->
   <main>
     <div class="main-content">
 
+      <!-- TEXT PANEL -->
       <div class="text-panel">
-        <!-- Your text stays exactly as before -->
         <h1>Tourist Spots</h1>
-        <p>
-          Welcome to our interactive guide to the Philippines, an archipelago of over 7,000 
-          islands where breathtaking natural wonders meet a rich, multi-layered history. 
-          From the emerald-green Banaue Rice Terraces in the north to the crystal-clear lagoons of Palawan 
-          and the world-famous white sands of Boracay, the Philippines offers a diverse landscape for every 
-          type of traveler. Whether you are looking to dive into the vibrant coral reefs of the Tubbataha Reef, 
-          trek through lush tropical jungles with hiking trips, or explore and do island hopping, 
-          there is an unforgettable experience waiting around every corner.
-        </p>
-        <p>
-          Our interactive map is designed to help you navigate this tropical paradise with ease. 
-          Click on any red dot on the map to explore some of the Philippines’ most iconic tourist destinations. 
-          Each location features a curated look at must-see landmarks, local activities, and with travel tips to help 
-          you plan in the other tabs for your perfect island-hopping adventure. Dive in and discover why millions of travelers fall in love 
-          with the warmth, beauty, and "endless summer" of the Philippines.
-        </p>
+        <p> Welcome to our interactive guide to the Philippines, an archipelago of over 7,000 islands where breathtaking 
+          natural wonders meet a rich, multi-layered history. From the emerald-green Banaue Rice Terraces in the north to 
+          the crystal-clear lagoons of Palawan and the world-famous white sands of Boracay, the Philippines offers a diverse 
+          landscape for every type of traveler. Whether you are looking to dive into the vibrant coral reefs of the Tubbataha Reef, 
+          trek through lush tropical jungles with hiking trips, or explore and do island hopping, there is an unforgettable experience 
+          waiting around every corner. </p> 
+        
+        <p> Our interactive map is designed to help you navigate this tropical paradise with ease. Click on any red dot on the map to 
+          explore some of the Philippines’ most iconic tourist destinations. Each location features a curated look at must-see landmarks, 
+          local activities, and with travel tips to help you plan in the other tabs for your perfect island-hopping adventure. Dive in and 
+          discover why millions of travelers fall in love with the warmth, beauty, and "endless summer" of the Philippines. </p>
       </div>
 
+      <!-- MAP -->
       <div class="map-container">
         <object id="ph-map" type="image/svg+xml" data="../assets/interactiveelements/ph.svg"></object>
       </div>
@@ -205,8 +216,7 @@
     </div>
   </footer>
 
-  <!-- EXTERNAL JS -->
+  <!-- JS -->
   <script src="map.js"></script>
-
 </body>
 </html>
