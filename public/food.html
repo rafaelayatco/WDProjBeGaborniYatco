@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pamana Adventures Food">
-  <meta name="author" content="R YATCO">
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pamana Adventures Homepage" />
+  <meta name="keywords" content="HTML, Culture, Travel, Philippines" />
+  <meta name="author" content="R YATCO S GABORNI" />
 
   <title>Pamana Adventures - Food</title>
   <link rel="icon" type="image/x-icon" href="../assets/logo.png">
@@ -12,7 +13,7 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Background Video */
+ 
     #bg-video {
       position: fixed;
       top: 0;
@@ -39,7 +40,6 @@
       text-shadow: 1px 1px 4px #000;
     }
 
-    /* Carousel */
     .food-carousel {
       display: flex;
       gap: 30px;
@@ -73,7 +73,7 @@
       border-color: #ffcc00;
     }
 
-    /* Info Section */
+
     #food-info {
       max-width: 800px;
       margin: 30px auto;
@@ -99,34 +99,34 @@
       }
     }
 
-    /* Hide horizontal scrollbar but keep scroll */
-.food-carousel {
-  display: flex;
-  gap: 40px;
-  overflow-x: auto;
-  padding: 40px 20px;
-  scroll-behavior: smooth;
+        /* Hide horizontal scrollbar but keep scroll */
+    .food-carousel {
+      display: flex;
+      gap: 40px;
+      overflow-x: auto;
+      padding: 40px 20px;
+      scroll-behavior: smooth;
 
-  /* Hide scrollbar (Chrome, Safari, Edge) */
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE / Edge */
-}
+      
+      scrollbar-width: none;     
+      -ms-overflow-style: none;   
+    }
 
-.food-carousel::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari */
-}
+    .food-carousel::-webkit-scrollbar {
+      display: none;            
+    }
 
 
   </style>
 </head>
 <body>
-  <!-- Background Video -->
+
   <video autoplay muted loop id="bg-video">
     <source src="../assets/backgrounds/food.mp4" type="video/mp4">
   </video>
   <div class="bg-overlay"></div>
 
-  <!-- Header -->
+
   <header>
     <div class="top">
       <img src="../assets/logo.png" alt="Pamana Adventures Logo">
@@ -137,82 +137,19 @@
     </div>
   </header>
 
-  <!-- Navigation -->
+  
   <nav class="nav">
-    <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="touristspots.html"><i class="fa-solid fa-location-dot"></i> Tourist Spots</a>
-    <a href="culture.html"><i class="fa-solid fa-sun"></i> Culture</a>
-    <a href="food.html" class="active"><i class="fa-solid fa-utensils"></i> Food</a>
-    <a href="travelguide.html"><i class="fa-solid fa-suitcase"></i> Travel Guide</a>
-    <a href="sources.html"><i class="fa-solid fa-book"></i> Sources</a>
-  </nav>
+      <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+      <a href="touristspots.html"><i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span></a>
+      <a href="culture.html"><i class="fa-solid fa-sun"></i> <span>Culture</span></a>
+      <a href="food.html" class="active"><i class="fa-solid fa-utensils"></i> <span>Food</span></a>
+      <a href="travelguide.html"><i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span></a>
+      <a href="sources.html"><i class="fa-solid fa-book"></i> <span>Sources</span></a>
+    </nav>
 
   <main>
-    <h1>Philippine Foods</h1>
-
-  
+    <h1>Philippine Food Recommedations</h1>
     <div class="food-carousel" id="food-carousel">
-
-  <div class="food-item" data-title="Baker's Hill Hopia" 
-  data-desc="From Palawan, hopia is one of the many Filipino pastries that comes in different flavors, from classic monggo (mung bean) filling to creamy ube (purple yam).">
-    <img src="../assets/food/hopia.jpg" alt="Baker's Hill Hopia">
-  </div>
-
-  <div class="food-item" data-title="Sinigang" data-desc="A sour soup made with tamarind, vegetables, and pork, fish, or shrimp.">
-    <img src="../assets/food/sinigang.jpg" alt="Sinigang">
-  </div>
-
-  <div class="food-item" data-title="Lechon" data-desc="Whole roasted pig known for its crispy skin and juicy meat.">
-    <img src="../assets/food/lechon.jpg" alt="Lechon">
-  </div>
-
-  <div class="food-item" data-title="Kare-Kare" data-desc="A rich peanut-based stew with oxtail and vegetables.">
-    <img src="../assets/food/karekare.jpg" alt="Kare-Kare">
-  </div>
-
-  <div class="food-item" data-title="Pancit" data-desc="Stir-fried noodles symbolizing long life and prosperity.">
-    <img src="../assets/food/pancit.jpg" alt="Pancit">
-  </div>
-
-  <div class="food-item" data-title="Lumpia" data-desc="Crispy Filipino spring rolls filled with meat and vegetables.">
-    <img src="../assets/food/lumpia.jpg" alt="Lumpia">
-  </div>
-
-  <div class="food-item" data-title="Halo-Halo" data-desc="A famous Filipino dessert with shaved ice, milk, and mixed sweets.">
-    <img src="../assets/food/halohalo.jpg" alt="Halo-Halo">
-  </div>
-
-  <div class="food-item" data-title="Bulalo" data-desc="Beef marrow soup slow-cooked for a rich and hearty flavor.">
-    <img src="../assets/food/bulalo.jpg" alt="Bulalo">
-  </div>
-
-  <div class="food-item" data-title="Bicol Express" data-desc="Spicy pork stew cooked in coconut milk and chili peppers.">
-    <img src="../assets/food/bicolexpress.jpg" alt="Bicol Express">
-  </div>
-
-  <div class="food-item" data-title="Pinakbet" data-desc="A vegetable dish flavored with shrimp paste, common in Ilocos.">
-    <img src="../assets/food/pinakbet.jpg" alt="Pinakbet">
-  </div>
-
-  <div class="food-item" data-title="Chicken Inasal" data-desc="Grilled chicken marinated in calamansi and annatto oil.">
-    <img src="../assets/food/inasal.jpg" alt="Chicken Inasal">
-  </div>
-
-  <div class="food-item" data-title="Sisig" data-desc="Sizzling chopped pork mixed with onions and calamansi.">
-    <img src="../assets/food/sisig.jpg" alt="Sisig">
-  </div>
-
-  <div class="food-item" data-title="Laing" data-desc="Taro leaves cooked in coconut milk and spices.">
-    <img src="../assets/food/laing.jpg" alt="Laing">
-  </div>
-
-  <div class="food-item" data-title="Dinuguan" data-desc="Savory pork blood stew with vinegar and spices.">
-    <img src="../assets/food/dinuguan.jpg" alt="Dinuguan">
-  </div>
-
-  <div class="food-item" data-title="Bangus" data-desc="Milkfish dish, often grilled or fried.">
-    <img src="../assets/food/bangus.jpg" alt="Bangus">
-  </div>
 
   <div class="food-item" data-title="Baker's Hill Hopia (Palawan)" 
   data-desc="Hopia is one of the many Filipino pastries that comes in different flavors, from classic monggo (mung bean) filling to creamy ube (purple yam).">
@@ -244,82 +181,144 @@
     <img src="../assets/food/pigar-pigar.jpg" alt="Pigar-pigar">
   </div>
 
-  <div class="food-item" data-title="Bibingka" data-desc="Rice cake traditionally cooked during Christmas season.">
-    <img src="../assets/food/bibingka.jpg" alt="Bibingka">
+  <div class="food-item" data-title="Pinuneg" 
+  data-desc="A traditional Ifugao dish that showcases the creativity of the local cuisine. It’s a type of blood sausage made from the blood of native pigs, mixed with ground rice, ginger, and various aromatic herbs and spices. The mixture is stuffed into pig intestines and then boiled or grilled to perfection.">
+    <img src="../assets/food/pinuneg.jpg" alt="Pinuneg">
   </div>
 
-  <div class="food-item" data-title="Kutsinta" data-desc="Sticky brown rice cake topped with grated coconut.">
-    <img src="../assets/food/kutsinta.jpg" alt="Kutsinta">
+  <div class="food-item" data-title="Inlagu" 
+  data-desc="A savory dish composed of cooked glutinous rice together with tender chunks of pork/chicken, flavored with indigenous herbs and spices. It is typically wrapped in banana leaves and steamed, allowing the flavors to meld together.">
+    <img src="../assets/food/inlagu.jpg" alt="Inlagu">
   </div>
 
-  <div class="food-item" data-title="Palabok" data-desc="Rice noodles with shrimp sauce and toppings.">
-    <img src="../assets/food/palabok.jpg" alt="Palabok">
+  <div class="food-item" data-title="Pinaudan" 
+  data-desc="A staple in Ifugao cuisine featuring tender chicken pieces simmered in broth, enriched with native vegetables such as bamboo shoots, sweet potatoes, and leafy greens. Indigenous herbs and spices are also added to enhance the aroma and taste of the stew.">
+    <img src="../assets/food/pinaudan.jpg" alt="Pinaudan">
   </div>
 
-  <div class="food-item" data-title="Mami" data-desc="Filipino noodle soup influenced by Chinese cuisine.">
-    <img src="../assets/food/mami.jpg" alt="Mami">
+  <div class="food-item" data-title="Calamay" 
+  data-desc="A sticky sweet treat made from glutinous rice, coconut milk, and brown sugar.">
+    <img src="../assets/food/calamay.jpg" alt="Calamay">
   </div>
 
-  <div class="food-item" data-title="Arroz Caldo" data-desc="Rice porridge with chicken, ginger, and garlic.">
-    <img src="../assets/food/arrozcaldo.jpg" alt="Arroz Caldo">
+  <div class="food-item" data-title="Peanut Kisses" 
+  data-desc="It is made from roasted peanuts and egg whites. This snack is typically found in local stores, Bohol pasalubong centers, or even in shops nationwide.">
+    <img src="../assets/food/peanutkisses.jpg" alt="Arroz Peanut Kisses">
   </div>
 
-  <div class="food-item" data-title="Tokwa't Baboy" data-desc="Tofu and pork dish served with vinegar sauce.">
-    <img src="../assets/food/tokwatbaboy.jpg" alt="Tokwa't Baboy">
+  <div class="food-item" data-title="Broas" 
+  data-desc="Also known as ladyfingers- crisp, sweet biscuits that melt in your mouth, sometimes paired with hot drinks like coffee or sikwate.">
+    <img src="../assets/food/broas.jpg" alt="Broas">
   </div>
 
-  <div class="food-item" data-title="Ginataang Gulay" data-desc="Vegetables cooked in coconut milk.">
-    <img src="../assets/food/ginataangulay.jpg" alt="Ginataang Gulay">
+  <div class="food-item" data-title="Cafe Maruja" 
+  data-desc="A beachside cafe located in front of Casa Pilar Beach Resort at Station 3. They serve all-day brunch, such as souffle pancakes, toast and eggs, and Buddha Bowls or one-bowl vegan/vegetarian meals consisting of grains, plant-based proteins, and veggies. They also serve beverages, such as coffee-based drinks, mocktails, smoothies, and Freak Shakes, which are over-the-top milkshakes with a ton of toppings.">
+    <img src="../assets/food/cafemarujabeefbuddhabowl.jpg" alt="Cafe Maruja">
   </div>
 
-  <div class="food-item" data-title="Bopis" data-desc="Spicy pork lung dish popular in street food stalls.">
-    <img src="../assets/food/bopis.jpg" alt="Bopis">
+  <div class="food-item" data-title="Cha Cha's Beach Cafe" 
+  data-desc=" The in-house restaurant of COAST Boracay, a beachfront resort at Station 2. They serve food from cuisines all over the world. You can order Filipino, Mediterranean, Mexican, and even Malaysian food.">
+    <img src="../assets/food/chachasbeachcafefood.jpg" alt="Cha Cha's Beach Cafe">
   </div>
 
-  <div class="food-item" data-title="Ukoy" data-desc="Crispy shrimp and vegetable fritters.">
-    <img src="../assets/food/ukoy.jpg" alt="Ukoy">
+  <div class="food-item" data-title="Coco Mama" 
+  data-desc="This restaurant serves gluten-free, lactose-free, low-glycemic, and vegan coconut ice cream, topped with different ingredients and served in a coconut shell.">
+    <img src="../assets/food/cocomamafoodbowl.jpg" alt="Coco Mama">
   </div>
 
-  <div class="food-item" data-title="Batchoy" data-desc="Noodle soup with pork, liver, and chives.">
-    <img src="../assets/food/batchoy.jpg" alt="Batchoy">
+  <div class="food-item" data-title="Tinalay" 
+  data-desc="A flavorful bread made from flour, water, and yeast. The bread is often enjoyed with local spreads or as an accompaniment to meals.">
+    <img src="../assets/food/tinalay.jpg" alt="Tinalay">
   </div>
 
-  <div class="food-item" data-title="Pochero" data-desc="Spanish-influenced stew with beef and vegetables.">
-    <img src="../assets/food/pochero.jpg" alt="Pochero">
+  <div class="food-item" data-title="Bukayo" 
+  data-desc="A sweet treat made from young coconut strips cooked in caramelized sugar.">
+    <img src="../assets/food/bukayo.jpg" alt="Bukayi">
   </div>
 
-  <div class="food-item" data-title="Menudo" data-desc="Tomato-based pork stew with potatoes and carrots.">
-    <img src="../assets/food/menudo.jpg" alt="Menudo">
+  <div class="food-item" data-title="Sutukil" 
+  data-desc="It stands for Sugba (grilled), Tula (stewed), and Kilaw (raw). This method of preparing seafood is a culinary tradition in Siquijor, as well as in other Visayan provinces. Freshly caught fish and other seafood are prepared in three different ways, offering a variety of flavors and textures.">
+    <img src="../assets/food/sutukil.jpg" alt="Sutukil">
   </div>
 
-  <div class="food-item" data-title="Afritada" data-desc="Meat stew cooked in tomato sauce with vegetables.">
-    <img src="../assets/food/afritada.jpg" alt="Afritada">
+  <div class="food-item" data-title="Bingka Dawa" 
+  data-desc="A rice cake that uses Dawa, a kind of birdseed as an ingredient.">
+    <img src="../assets/food/bingkadawa.jpg" alt="Bingka Dawa">
   </div>
 
-  <div class="food-item" data-title="Caldereta" data-desc="Hearty meat stew with liver spread and cheese.">
-    <img src="../assets/food/caldereta.jpg" alt="Caldereta">
+  <div class="food-item" data-title="Masi" 
+  data-desc="The glutinous globule filled with a sweet peanut and sugar paste.">
+    <img src="../assets/food/masi.jpg" alt="Masi">
   </div>
 
-  <div class="food-item" data-title="Giniling" data-desc="Ground meat dish with vegetables and tomato sauce.">
-    <img src="../assets/food/giniling.jpg" alt="Giniling">
+  <div class="food-item" data-title="Torta" 
+  data-desc="It is made with the addition of pork lard and tuba, red coconut wine.">
+    <img src="../assets/food/torta.jpg" alt="Torta">
   </div>
 
-  <div class="food-item" data-title="Paksiw na Isda" data-desc="Fish cooked in vinegar and spices.">
-    <img src="../assets/food/paksiw.jpg" alt="Paksiw na Isda">
+   <div class="food-item" data-title="Bulalo" 
+   data-desc="A Filipino stew with beef shanks and bone marrow.">
+    <img src="../assets/food/bulalo.jpg" alt="Bulalo">
+  </div>
+
+  <div class="food-item" data-title="Halo-Halo" 
+  data-desc="A Filipino shaved ice dessert, layered with coconut, jackfruit, sweetened bananas, tapioca, and nata de coco.">
+    <img src="../assets/food/halohalo.jpeg" alt="Halo-Halo">
+  </div>
+
+  <div class="food-item" data-title="BBQ at Mama's Grill" 
+  data-desc="They serve a variety of different meats and they cook it on the grill and smother it with their signature sauce.">
+    <img src="../assets/food/bbq.jpg" alt="BBQ">
+  </div>
+
+  <div class="food-item" data-title="Sayongsong" 
+  data-desc="This famous Surigao delicacy is a “kakanin” wrapped in banana leaves with the color and consistency of a “puto” or rice cake. It’s made up of glutinous rice, brown sugar, calamansi juice, roasted peanut, and coconut milk. Sayongsong comes out wrapped in banana leaves. Some people say it tastes like “puto” but with coconut milk. This can be easily found in public markets, food stalls, and “pasalubong” shops.">
+    <img src="../assets/food/sayongsong.jpg" alt="Sayongsong">
+  </div>
+
+  <div class="food-item" data-title="Poot-Poot Ginamos" 
+  data-desc="This delicacy is unfamiliar to tourists and even Filipinos coming from Manila. Poot poot ginamos is a unique and tasty treat from Surigao. This flavorful delicacy is made of small fishes locally known as poot poot. This type of fish can only be found on Philippine shores. This fish specialty comes with fermented fish sauce which is very cheap, making it even more popular to tourists! One jar of poot poot ginamos costs less than a hundred pesos. This is a must-try for every Surigao visitor.">
+    <img src="../assets/food/pootpoot.jpg" alt="Poot-Poot Ginamos">
+  </div>
+
+  <div class="food-item" data-title="Kinilaw" 
+  data-desc="Kinilaw is a common dish for many provinces. What sets apart Surigao’s kinilaw among others is its exotic flavor. Travellers all over the world and within the country visit Surigao for its delicious kinilaw. This local delicacy is made of raw fish and it does not involve any form of cooking. To prepare this native cuisine, the people of Surigao debone and wash the raw fishes and combine it with a number of condiments. The perfect mix of ginger, vinegar, onions, chilli peppers, and salt makes this delicacy a haven for your taste buds. Some even use “hinatuan,” a type of wild onion to add more spice to this mouth-watering cuisine. ">
+    <img src="../assets/food/kinilaw.jpg" alt="Kinilaw">
+  </div>
+
+  <div class="food-item" data-title="Sinuglaw" 
+  data-desc="A dish that originated in Mindanao and it’s a collision of flavors. Vinegar cured raw fish paired with smoky grilled pork.">
+    <img src="../assets/food/sinuglaw.jpg" alt="sinuglaw">
+  </div>
+
+  <div class="food-item" data-title="Balbacua" 4
+  data-desc="A Filipino labor of love, and if you ask Davaoenos, it’s also the perfect hangover cure.">
+    <img src="../assets/food/balbacua.jpg" alt="Balbacua">
+  </div>
+
+  <div class="food-item" data-title="Bagaybay" 
+  data-desc="Bagabay is usually cooked down with soy sauce, vinegar, and spices. It contains a lot of chilies in it in addition to garlic, onions, and ginger.">
+    <img src="../assets/food/bagaybay.png" alt="Bagaybay">
   </div>
 
 </div>
 
-
-    <!-- Info Display -->
     <div id="food-info">
       <h2 id="food-title">Select a food to see details</h2>
-      <p id="food-desc">Click on a food plate above to view ingredients and recipe.</p>
+      <p id="food-desc">Click on a food plate above to view description and recipe.</p>
     </div>
   </main>
 
-  <footer>
-    <p>All Rights Reserved</p>
+   <footer>
+    <div class="footer-container">
+      <div class="footer-left"><p>Follow us on Facebook | Instagram | Twitter | YouTube</p></div>
+      <div class="footer-center"><p>2025 Pamana Adventures. All Rights Reserved.</p></div>
+      <div class="footer-right">
+        <p><b>Contact Information</b></p>
+        <p>Email: b2029rmyatco@pshs.edu.ph</p>
+        <p>Email: b2029savgaborni@pshs.edu.ph</p>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -341,5 +340,6 @@
       });
     });
   </script>
+
 </body>
 </html>

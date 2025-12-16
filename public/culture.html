@@ -1,158 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+ <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Pamana Adventures Homepage" />
   <meta name="keywords" content="HTML, Culture, Travel, Philippines" />
-  <meta name="author" content="R YATCO" />
+  <meta name="author" content="R YATCO S GABORNI" />
 
-  <title>Pamana Adventures</title>
+  <title>Pamana Adventures | Culture</title>
   <link rel="icon" type="image/x-icon" href="../assets/logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
 
-<style>
-    main h1, p {
-      font-family: 'Gabriel Sans', sans-serif;
-      margin: 5%;
-    }
-
-    footer p {
-      font-family: 'Gabriel Sans', sans-serif;
-      margin: 0%;
-    }
+  <style>
 
     #bg-video {
-      position: fixed;   /* stays in place */
-      top: 0;
-      left: 0;
-      width: 100vw;      /* full viewport width */
-      height: 100vh;     /* full viewport height */
-      object-fit: cover; /* crops to fill without stretching */
-      z-index: -1;       /* behind all content */
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: -1;
+    }
+
+
+    main {
+      padding: 60px 8%;
+      color: white;
+    }
+
+    main h1 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    main p {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 50px;
+      line-height: 1.7;
+    }
+
+
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .culture-card {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .culture-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+    }
+
+    .culture-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .culture-card:hover img {
+      transform: scale(1.1);
+    }
+
+
+    .culture-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+
+    .culture-overlay h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: white;
     }
 
     @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-left,
-      .footer-center,
-      .footer-right {
-        margin: 5px 0;
+      main {
+        padding: 40px 5%;
       }
     }
-
-    main {
-      display: flex;
-      gap: 30px;
-      margin: 5%;
-    }
-
-    main .content {
-      flex: 2;
-    }
-
-    main h1, main p {
-      margin: 0 0 15px 0;
-    }
-
-    .slideshow-container {
-      flex: 1;
-      max-width: 400px;
-      height: 420px;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(4px);
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-      align-self: flex-start;
-      text-align: center;
-    }
-
-    .slide {
-      display: none;
-      width: 100%;
-      height: 100%;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* ensures full image fits without cropping */
-      display: block;
-      margin: 0 auto;
-      background-color: rgba(255,255,255,0.85); /* fills empty space if needed */
-    }
-
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      padding: 10px;
-      color: #256877;
-      font-size: 22px;
-      font-weight: bold;
-      user-select: none;
-      background: rgba(255,255,255,0.7);
-      border-radius: 50%;
-      transform: translateY(-50%);
-    }
-
-    .prev { left: 10px; }
-    .next { right: 10px; }
-    .prev:hover, .next:hover { background: #256877; color: white; }
-
-    .dots {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .dot {
-      cursor: pointer;
-      height: 12px;
-      width: 12px;
-      margin: 0 4px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: 0.3s;
-    }
-
-    .dot.active {
-      background-color: #717171;
-    }
-
-    footer {
-      background-color: #256877;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .footer-left, .footer-center, .footer-right {
-      margin: 5px;
-    }
-
-    @media (max-width: 1000px) {
-      main { flex-direction: column; }
-    }
-</style>
-
+  </style>
 </head>
+
 <body>
-<video autoplay muted loop id="bg-video">
-  <source src="../assets/backgrounds/backgroundvid.mp4" type="video/mp4">
-</video>
+
+  <video autoplay muted loop id="bg-video">
+    <source src="../assets/backgrounds/backgroundvid.mp4" type="video/mp4">
+  </video>
 
   <header>
     <div class="top">
@@ -164,69 +122,90 @@
     </div>
   </header>
 
- <nav class="nav">
-    <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="../public/touristspots.html" class="active"><i class="fa-solid fa-location-dot"></i> Tourist Spots</a>
-    <a href="../public/culture.html"><i class="fa-solid fa-sun"></i> Culture</a>
-    <a href="../public/food.html"><i class="fa-solid fa-utensils"></i> Food</a>
-    <a href="../public/travelguide.html"><i class="fa-solid fa-suitcase"></i> Travel Guide</a>
-    <a href="../public/sources.html"><i class="fa-solid fa-book"></i> Sources</a>
-  </nav>
+  <nav class="nav">
+      <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+      <a href="touristspots.html"><i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span></a>
+      <a href="culture.html" class="active"><i class="fa-solid fa-sun"></i> <span>Culture</span></a>
+      <a href="food.html"><i class="fa-solid fa-utensils"></i> <span>Food</span></a>
+      <a href="travelguide.html"><i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span></a>
+      <a href="sources.html"><i class="fa-solid fa-book"></i> <span>Sources</span></a>
+    </nav>
+
 
   <main>
-    <div class="content">
-      <h1>Food Recommendations</h1>
-      <p>Pamana Adventures, your ultimate travel companion for exploring the wonders of the Philippines. 
-        From pristine beaches and lush mountains to lively festivals and rich cultural heritage, 
-        our website is your one stop tour guide through the islands’ destinations of the Pear of the Orient Seas. 
-        Every journey is designed to connect you not only with stunning landscapes, but also with the stories, 
-        traditions, and history that make the Philippines one of a kind.</p>
+    <h1>Philippine Culture & Heritage</h1>
+    <p>
+      Discover the traditions, historical landmarks, and living heritage that define the Philippines.
+      Click on any cultural site or festival to learn about its history, meaning, and cultural importance.
+    </p>
 
-      <br>
-      
-      <p>In our website you can explore regional tourist attractions, uncover hidden gems, foodie trips, 
-        and plan your adventures with helpful tips and interactive guides. Whether you’re a first-time traveler 
-        or a seasoned explorer, Pamana Adventures ensures every trip is meaningful, memorable, and full of cultural discovery. 
-        With Pamana Adventures, you can feel that it is truly more fun in the Philippines. </p>
+    <div class="culture-grid">
 
-    </div>
+      <a class="culture-card" href="/public/culture/banauriceterraces.html">
+        <img src="../assets/slides/banauericeterraces.jpeg">
+        <div class="culture-overlay"><h3>Banaue Rice Terraces</h3></div>
+      </a>
 
-       <div class="slideshow-container">
+      <a class="culture-card" href="/public/culture/boracay.html">
+        <img src="../assets/slides/boracay.webp">
+        <div class="culture-overlay"><h3>Boracay</h3></div>
+      </a>
 
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/tubbataha.webp"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/elnido.jpg"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/hondabay.webp"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/puertoprincesa.webp"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/hundredislands.jpg"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/banauericeterraces.jpeg"></a>
-      <a class="slide" href="touristspots.html"><img src="../assets/slides/chocolatehills.jpg"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/boracay.webp"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/siquijor.jpg"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/magellanscross.jpg"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/cloud9.webp"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/enchantedriver.jpg"></a>
-      <a class="slide" href="public/touristspots.html"><img src="../assets/slides/mountapo.jpg"></a>
+      <a class="culture-card" href="/public/culture/chocolatehills.html">
+        <img src="../assets/slides/chocolatehills.jpg">
+        <div class="culture-overlay"><h3>Chocolate Hills</h3></div>
+      </a>
 
-      <!-- Controls -->
-      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      <a class="culture-card" href="/public/culture/cloud9.html">
+        <img src="../assets/slides/cloud9.webp">
+        <div class="culture-overlay"><h3>Cloud 9</h3></div>
+      </a>
 
-      <!-- Dots -->
-      <div class="dots">
-        <span class="dot" onclick="goToSlide(1)"></span>
-        <span class="dot" onclick="goToSlide(2)"></span>
-        <span class="dot" onclick="goToSlide(3)"></span>
-        <span class="dot" onclick="goToSlide(4)"></span>
-        <span class="dot" onclick="goToSlide(5)"></span>
-        <span class="dot" onclick="goToSlide(6)"></span>
-        <span class="dot" onclick="goToSlide(7)"></span>
-        <span class="dot" onclick="goToSlide(8)"></span>
-        <span class="dot" onclick="goToSlide(9)"></span>
-        <span class="dot" onclick="goToSlide(10)"></span>
-        <span class="dot" onclick="goToSlide(11)"></span>
-        <span class="dot" onclick="goToSlide(12)"></span>
-        <span class="dot" onclick="goToSlide(13)"></span>
-      </div>
+      <a class="culture-card" href="/public/culture/elnido.html">
+        <img src="../assets/slides/elnido.jpg">
+        <div class="culture-overlay"><h3>El Nido</h3></div>
+      </a>
+
+      <a class="culture-card" href="/public/culture/enchantedriver.html">
+        <img src="../assets/slides/enchantedriver.jpg">
+        <div class="culture-overlay"><h3>Enchanted River</h3></div>
+      </a>
+
+      <a class="culture-card" href="/public/culture/hondabay.html">
+        <img src="../assets/slides/hondabay.webp">
+        <div class="culture-overlay"><h3>Honda Bay</h3></div>
+      </a>
+
+      <a class="culture-card" href="/public/culture/hundredislands.html">
+        <img src="../assets/slides/hundredislands.jpg">
+        <div class="culture-overlay"><h3>Hundred Islands</h3></div>
+      </a>
+
+      <a class="culture-card" href="/public/culture/magellanscross.html">
+        <img src="../assets/slides/magellanscross.jpg">
+        <div class="culture-overlay"><h3>Magellan's Cross</h3></div>
+      </a>
+
+      <a class="culture-card" href="/public/culture/mountapo.html">
+        <img src="../assets/slides/mountapo.jpg">
+        <div class="culture-overlay"><h3>Mount Apo</h3></div>
+      </a>
+
+      <a class="culture-card" href="/public/culture/puertoprincesa.html">
+        <img src="../assets/slides/puertoprincesa.webp">
+        <div class="culture-overlay"><h3>Puerto Princesa Underground River</h3></div>
+      </a>
+
+      <a class="culture-card" href="/public/culture/siquijor.html">
+        <img src="../assets/slides/siquijor.jpg">
+        <div class="culture-overlay"><h3>Siquijor</h3></div>
+      </a>
+
+      <a class="culture-card" href="/public/culture/tubbataha.html">
+        <img src="../assets/slides/tubbataha.webp">
+        <div class="culture-overlay"><h3>Tubbataha Reef</h3></div>
+      </a>
+
     </div>
   </main>
 
@@ -241,10 +220,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="slideshowindex.js"></script>
-
- 
 
 </body>
 </html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pamana Adventures Homepage" />
+  <meta name="keywords" content="HTML, Culture, Travel, Philippines" />
+  <meta name="author" content="R YATCO S GABORNI" />
+
+  <title>Pamana Adventures | Travel Guide</title>
+  <link rel="icon" type="image/x-icon" href="../assets/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="/public/style.css">
+
+  <style>
+    
+  #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+
+    main {
+      padding: 50px 8%;
+      color: rgb(0, 0, 0);
+    }
+
+    
+    footer p {
+      font-family: 'Gabriel Sans', sans-serif;
+      margin: 0%;
+    }
+
+    main {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  align-items: flex-start;
+  font-family: 'Gabriel Sans', sans-serif;
+}
+
+.main-content {
+      display: flex;
+      gap: 60px;
+      margin: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+
+ .text-panel {
+      background: rgba(255,255,255,0.9);
+      padding: 50px;
+      border-radius: 14px;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      flex: 1;
+    }
+.content {
+  flex: 2;
+}
+
+.content h1 {
+  margin-top: 0;
+  color: #256877;
+}
+
+.content p {
+  line-height: 1.6;
+}
+
+  /* SLIDESHOW */
+.slideshow-container {
+  position: relative;
+  width: 750px;
+  height: 650px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTROLS */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 10px;
+  font-size: 20px;
+  color: #256877;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+  background: #256877;
+  color: white;
+}
+
+/* DOTS */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background: #256877;
+}
+
+/* INTERACTIVE INFO DOT */
+#info-dot {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 28px;
+  height: 28px;
+  background: #256877;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+#info-dot:hover {
+  background: #1c4f5b;
+}
+
+/* POPUP BOX – TOP OF IMAGE */
+#popup-box {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 85%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 10;
+}
+
+#popup-box h3 {
+  margin-top: 0;
+  color: #256877;
+}
+
+#popup-box p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#close-popup {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #256877;
+}
+
+footer {
+  background: #256877;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <video autoplay muted loop id="bg-video">
+    <source src="../../assets/backgrounds/touristspotsdrone.mp4" type="video/mp4">
+  </video>
+  <div class="bg-overlay"></div>
+  <!-- HEADER -->
+  <header>
+    <div class="top">
+      <img src="../../assets/logo.png" alt="Pamana Adventures Logo">
+      <div>
+        <h1>Pamana Adventures</h1>
+        <h3>Where Culture Meets Adventure</h3>
+      </div>
+    </div>
+  </header>
+
+<nav class="nav">
+    <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+    <a href="touristspots.html" class="active"><i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span></a>
+    <a href="culture.html"><i class="fa-solid fa-sun"></i> <span>Culture</span></a>
+    <a href="food.html"><i class="fa-solid fa-utensils"></i> <span>Food</span></a>
+    <a href="travelguide.html"><i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span></a>
+    <a href="sources.html"><i class="fa-solid fa-book"></i> <span>Sources</span></a>
+  </nav>
+
+<main>
+
+ <div class="text-panel">
+        <h1>Honda Bay</h1>
+        <p>Honda Bay is a popular destination in Puerto Princesa known for its white-sand beaches, 
+            beautiful island scenery, and colorful coral reefs. Visitors can enjoy snorkeling, diving, 
+            and island hopping. The bay's name comes from the Spanish term Bahía Honda, meaning “deep bay,” 
+            and locals pronounce the “H” silently.</p> 
+        
+        <p>Location: Eastern coast of Palawan, near Puerto Princesa City.</p>
+        <p>Best Time to Visit: November to May (dry season).</p>
+
+
+         <a href="/public/touristspots.html" style="color: rgb(0, 89, 255)";> <i class="fa-solid fa-book"></i> <span>Back to Tourist Spots</span></a>
+      </div>
+
+<div>
+  <div class="slideshow-container">
+
+    <div class="slide"><img src="../../assets/touristspotpics/hondabayaerial.webp"></div>
+    <div class="slide"><img src="../../assets/touristspotpics/hondaybayisland.jpg"></div>
+    <div class="slide"><img src="../../assets/touristspotpics/hondaybayside.jpg"></div>
+
+    <!-- INTERACTIVE DOT -->
+    <div id="info-dot" onclick="openPopup()">i</div>
+
+    <!-- POPUP -->
+    <div id="popup-box">
+      <span id="close-popup" onclick="closePopup()">&times;</span>
+      <h3 id="popup-title"></h3>
+      <p id="popup-text"></p>
+    </div>
+
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+
+  <div class="dots">
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+
+  </div>
+</div>
+
+</main>
+
+   <footer>
+    <div class="footer-container">
+      <div class="footer-left"><p>Follow us on Facebook | Instagram | Twitter | YouTube</p></div>
+      <div class="footer-center"><p>2025 Pamana Adventures. All Rights Reserved.</p></div>
+      <div class="footer-right">
+        <p><b>Contact Information</b></p>
+        <p>Email: b2029rmyatco@pshs.edu.ph</p>
+        <p>Email: b2029savgaborni@pshs.edu.ph</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+let slideIndex = 1;
+
+const slideData = [
+  { title: "Aerial View" },
+  { title: "Islands" },
+  { title: "Luli Island" },
+];
+
+const popupData = [
+  "The bay was named by Spanish colonizers who arrived in the Philippines in the 16th century. The name Honda Bay stuck and has been used ever since.",
+  "Starfish island is aptly named for the abundance of five-armed orange starfish found in its shallows, though visitors are warned to be careful not to harm them.",
+  "Its special feature is the Filipino name 'Lulubog-Lilitaw', meaning it disappears at high tide and reappears at low tide.",
+];
+
+showSlides(slideIndex);
+
+function changeSlide(n) {
+  showSlides(slideIndex += n);
+}
+
+function goToSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) slideIndex = 1;
+  if (n < 1) slideIndex = slides.length;
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
+
+  closePopup();
+}
+
+function openPopup() {
+  document.getElementById("popup-box").style.display = "block";
+  document.getElementById("popup-title").textContent =
+    slideData[slideIndex - 1].title;
+  document.getElementById("popup-text").textContent =
+    popupData[slideIndex - 1];
+}
+
+function closePopup() {
+  document.getElementById("popup-box").style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tourist Spots in the Philippines">
-  <meta name="author" content="R YATCO">
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pamana Adventures Homepage" />
+  <meta name="keywords" content="HTML, Culture, Travel, Philippines" />
+  <meta name="author" content="R YATCO S GABORNI" />
 
   <title>Pamana Adventures Tourist Spots</title>
 
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ===== BACKGROUND VIDEO ===== */
+  
     #bg-video {
       position: fixed;
       top: 0;
@@ -24,7 +25,7 @@
       z-index: -2;
     }
 
-    main h1, p {
+    main h1, h2, p {
       font-family: 'Gabriel Sans', sans-serif;
       margin: 5%;
       text-align: justify;
@@ -35,7 +36,6 @@
       z-index: 1;
     }
 
-    /* ===== MAIN LAYOUT ===== */
     .main-content {
       display: flex;
       gap: 20px;
@@ -44,7 +44,6 @@
       flex-wrap: wrap;
     }
 
-    /* ===== TEXT PANEL ===== */
     .text-panel {
       background: rgba(255,255,255,0.9);
       padding: 24px 28px;
@@ -54,97 +53,39 @@
       flex: 1;
     }
 
-    /* ===== MAP ===== */
-    .map-container {
-      flex: 2;
-      min-width: 320px;
-    }
-
-    .map-container object {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ===== INFO PANEL ===== */
-    #info-panel {
-      position: fixed;
-      display: none;
-      top: 0;
-      left: 0;
-      width: 250px;
-      background: rgba(255,255,255,0.97);
-      box-shadow: 0 0 12px rgba(0,0,0,0.3);
-      padding: 16px;
-      border-radius: 12px;
-      z-index: 999;
-      transition: all 0.3s ease;
-    }
-
-    #explore-btn {
-      margin-top: 12px;
-      padding: 10px 16px;
-      background: #ff4d4d;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    #explore-btn:hover {
-      background: #e63c3c;
-    }
-
-    /* ===== REGION DOTS ===== */
-    .region-dot {
-      fill: #ff4d4d;
-      cursor: pointer;
-      transition: transform 0.2s ease, fill 0.2s ease;
-    }
-
-    .region-dot:hover {
-      fill: #ffcc00;
-      transform: scale(1.5);
-    }
-
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 1500px) {
       .main-content {
         flex-direction: column;
       }
     }
-    /* ===== TEXT PANEL (REVISED FOR SOURCES PAGE) ===== */
-.text-panel {
-  background: rgba(255, 255, 255, 0.75); /* less opaque */
-  padding: 10px;
-  border-radius: 16px;
-  max-width: 90vw;
-  width: 100%;
-  margin: 0 auto;          /* center it */
-  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-  flex: none;              /* prevents it from shrinking */
-}
+    
+    .text-panel {
+      background: rgba(255, 255, 255, 0.75); /* less opaque */
+      padding: 10px;
+      border-radius: 16px;
+      max-width: 90vw;
+      width: 100%;
+      margin: 0 auto;       
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      flex: none;             
+    }
 
 
   </style>
 </head>
 <body>
 
-  <!-- INFO PANEL -->
   <div id="info-panel">
     <h2 id="info-title"></h2>
     <p id="info-desc"></p>
     <button id="explore-btn">Explore Now</button>
   </div>
 
-  <!-- BACKGROUND VIDEO -->
   <video autoplay muted loop id="bg-video">
     <source src="../assets/backgrounds/sourcesbg.mp4" type="video/mp4">
   </video>
   <div class="bg-overlay"></div>
 
-  <!-- HEADER -->
   <header>
     <div class="top">
       <img src="../assets/logo.png" alt="Pamana Adventures Logo" style="height:80px;">
@@ -155,35 +96,135 @@
     </div>
   </header>
 
-  <!-- NAV -->
+
   <nav class="nav">
-    <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="../public/touristspots.html" class="active"><i class="fa-solid fa-location-dot"></i> Tourist Spots</a>
-    <a href="../public/culture.html"><i class="fa-solid fa-sun"></i> Culture</a>
-    <a href="../public/food.html"><i class="fa-solid fa-utensils"></i> Food</a>
-    <a href="../public/travelguide.html"><i class="fa-solid fa-suitcase"></i> Travel Guide</a>
-    <a href="../public/sources.html"><i class="fa-solid fa-book"></i> Sources</a>
+    <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+    <a href="touristspots.html"><i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span></a>
+    <a href="culture.html"><i class="fa-solid fa-sun"></i> <span>Culture</span></a>
+    <a href="food.html"><i class="fa-solid fa-utensils"></i> <span>Food</span></a>
+    <a href="travelguide.html"><i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span></a>
+    <a href="sources.html"  class="active"><i class="fa-solid fa-book"></i> <span>Sources</span></a>
   </nav>
 
-  <!-- MAIN -->
   <main>
     <div class="main-content">
 
       <div class="text-panel">
-        <!-- Your text stays exactly as before -->
         <h1>References</h1>
-        <p>
-          https...
-        </p>
+      
+        <h2>Tourist Spots References</h2>
+
+      <p>Basilica Minore del Santo Niño de Cebu. (n.d.). <i>Magellan’s Cross</i>. https://santoninodecebubasilica.org/basilica-minore-del-santo-nino/magellans-cross/</p>
+
+      <p>Behold Philippines. (n.d.). <i>Story behind the name: Enchanted River</i>. https://www.beholdphilippines.com/story-behind-name-surigao-del-surs-enchanted-river/</p>
+
+      <p>Department of Foreign Affairs – Paris PE. (n.d.). <i>Boracay</i>. https://parispe.dfa.gov.ph/86-visit-phl/149-boracay</p>
+
+      <p>Encyclopaedia Britannica. (n.d.). <i>Banaue rice terraces</i>. https://www.britannica.com/place/Banaue-rice-terraces</p>
+
+      <p>Encyclopaedia Britannica. (n.d.). <i>Mount Apo</i>. https://www.britannica.com/place/Mount-Apo</p>
+
+      <p>Google Arts & Culture. (n.d.). <i>Mount Apo</i>. https://artsandculture.google.com/entity/mount-apo/m01m08l?hl=en</p>
+
+      <p>Guide to the Philippines. (n.d.). <i>Boracay</i>. https://guidetothephilippines.ph/destinations-and-attractions/boracay</p>
+
+      <p>Guide to the Philippines. (n.d.). <i>Chocolate Hills, Bohol travel guide</i>. https://guidetothephilippines.ph/articles/ultimate-guides/chocolate-hills-bohol-travel-guide</p>
+
+      <p>Guide to the Philippines. (n.d.). <i>Cloud 9, Siargao</i>. https://guidetothephilippines.ph/destinations-and-attractions/cloud-9</p>
+
+      <p>Guide to the Philippines. (n.d.). <i>El Nido</i>. https://guidetothephilippines.ph/destinations-and-attractions/el-nido</p>
+
+      <p>Guide to the Philippines. (n.d.). <i>Honda Bay</i>. https://guidetothephilippines.ph/destinations-and-attractions/honda-bay-2</p>
+
+      <p>Guide to the Philippines. (n.d.). <i>Magellan’s Cross</i>. https://guidetothephilippines.ph/destinations-and-attractions/magellan-s-cross</p>
+
+      <p>Marine Conservation Philippines. (n.d.). <i>Siquijor</i>. https://marineconservationphilippines.org/location/siquijor/</p>
+
+      <p>Municipality of El Nido. (n.d.). <i>History of El Nido</i>. https://elnido.gov.ph/history/</p>
+
+      <p>Our Pangasinan. (n.d.). <i>Hundred Islands: Tracing the history of a Philippine natural wonder</i>. https://www.ourpangasinan.com/featured/hundred-islands-tracing-the-history-of-a-philippine-natural-wonder/</p>
+
+      <p>Palawan Realty. (n.d.). <i>Puerto Princesa City</i>. https://palawanrealty0.tripod.com/puerto_princesa_city.htm</p>
+
+      <p>Puerto Princesa City Government. (n.d.). <i>About Puerto Princesa City</i>. https://puertoprincesa.ph/about-puerto-princesa-city/</p>
+
+      <p>Puerto Princesa City Government. (n.d.). <i>Key facts about Puerto Princesa City</i>. https://puertoprincesa.ph/key-facts/</p>
+
+      <p>See Pangasinan. (n.d.). <i>Hundred Islands National Park</i>. https://seepangasinan.com/places/hundred-islands-national-park/</p>
+
+      <p>Siquijor Provincial Government. (n.d.). <i>About Siquijor</i>. https://siquijorprovince.com/about-siquijor/</p>
+
+      <p>The Coastal Campaign. (n.d.). <i>Cloud 9, Siargao</i>. https://www.thecoastalcampaign.com/cloud-9-siargao/</p>
+
+      <p>Travel Palawan. (n.d.). <i>Honda Bay travel guide</i>. https://www.travel-palawan.com/honda-bay-travel-guide/</p>
+
+      <p>Tubbataha Reefs Natural Park. (n.d.). <i>About Tubbataha</i>. https://tubbatahareefs.org/about-tubbataha</p>
+
+      <p>UNESCO World Heritage Centre. (n.d.). <i>Rice Terraces of the Philippine Cordilleras</i>. https://whc.unesco.org/en/list/722/</p>
+
+      <p>UNESCO World Heritage Centre. (n.d.). <i>Tubbataha Reefs Natural Park</i>. https://whc.unesco.org/en/list/653/</p>
+
+      <p>UNESCO World Heritage Centre. (n.d.). <i>Chocolate Hills Natural Monument (Tentative List)</i>. https://whc.unesco.org/en/tentativelists/5024/</p>
+
+      <h2>Travel Tips Reference</h2>
+
+      <p>Stoked to Travel. (n.d.). <i>Philippines travel tips</i>. https://www.stokedtotravel.com/philippines-travel-tips/</p>
+      <p>W3Schools.com. (n.d.). <i>https://www.w3schools.com/howto/howto_js_accordion.asp</i> </p>
+
+      <h2>Food References</h2>
+
+      <p>Bohol Philippines. (n.d.). <i>Bohol peanut kisses</i>. https://bohol-philippines.com/bohol-peanut-kisses/</p>
+
+      <p>Café Maruja. (n.d.). <i>Café Maruja</i>. https://www.cafemaruja.com/</p>
+
+      <p>Cinnamon Snail. (n.d.). <i>Tupig</i>. https://cinnamonsnail.com/tupig/</p>
+
+      <p>Cooperative Development Authority. (n.d.). <i>Calamay: A popular delicacy of Bohol</i>. https://cda.gov.ph/region-7/calamay-a-popular-delicacy-of-bohol/</p>
+
+      <p>Folklife Magazine. (n.d.). <i>Foodways & holidays: Torta, a Filipino Christmas cake</i>. https://folklife.si.edu/magazine/foodways-holidays-torta-filipino-christmas-cake</p>
+
+      <p>Foxy Folksy. (n.d.). <i>Bukayo</i>. https://www.foxyfolksy.com/bukayo/</p>
+
+      <p>Jeanell Eats. (n.d.). <i>Peanut-stuffed sticky rice (Filipino masi)</i>. https://jeanelleats.com/peanut-stuffed-sticky-rice-filipino-masi/</p>
+
+      <p>Market Manila. (n.d.). <i>Broas (ladyfingers)</i>. https://www.marketmanila.com/archives/broas-ladyfingers</p>
+
+      <p>Nestlé Goodnes. (n.d.). <i>Pigar-pigar (style litsong baka)</i>. https://www.nestlegoodnes.com/ph/recipes/pigar-pigar-style-litsong-baka</p>
+
+      <p>Panlasang Pinoy. (n.d.). <i>Bulalo (stewed beef shank)</i>. https://panlasangpinoy.com/bulalo-stewed-beef-shank/</p>
+
+      <p>Panlasang Pinoy. (n.d.). <i>Lechon kawali</i>. https://panlasangpinoy.com/lechon-kawali/</p>
+
+      <p>Philippines Hidden Gems. (n.d.). <i>Siquijor delicacies</i>. https://philippineshiddengems.com/siquijor-delicacies/</p>
+
+      <p>PIKP. (2019). <i>Patupat</i>. https://pikp.org/2019/02/06/patupat/</p>
+
+      <p>Pinoy Care. (n.d.). <i>Pinuneg: The blood sausage of Benguet</i>. https://pinoycare.cz/philippines/pinuneg-the-blood-sausage-of-benguet/</p>
+
+      <p>Raintree Hospitality Group. (n.d.). <i>Cha Cha’s</i>. https://www.raintreehospitality.net/chachas</p>
+
+      <p>Secret PH. (n.d.). <i>Sample the Ifugao cuisine</i>. https://secret-ph.com/sample-the-ifugao-cuisine-a-delicious-and-unique-culinary-experience/</p>
+
+      <p>The Kitchn. (n.d.). <i>Halo-halo recipe</i>. https://www.thekitchn.com/halo-halo-recipe-23185201</p>
+
+      <p>Tripadvisor. (n.d.). <i>Coco Mama (Boracay) reviews</i>. https://www.tripadvisor.com.ph/Restaurant_Review-g294260-d10250483-Reviews-Coco_Mama-Boracay_Malay_Aklan_Province_Panay_Island_Visayas.html</p>
+
+      <p>Tripadvisor. (n.d.). <i>Mama’s Grill (Siargao) reviews</i>. https://www.tripadvisor.com.ph/Restaurant_Review-g8706248-d9561844-Reviews-Mama_s_Grill-Catangnan_Siargao_Island_Surigao_del_Norte_Province_Mindanao.html</p>
+
+      <p>Tsinoy Foodies. (2016). <i>Baker’s Hill</i>. https://tsinoyfoodies.com/2016/03/bakers-hill.html</p>
+
+      <p>Unilever Food Solutions. (n.d.). <i>Sutukil na isda</i>. https://www.unileverfoodsolutions.com.ph/recipe/sutokil-na-isda-sugba-tinola-kinilaw-R90023946.html</p>
+
+      <p>Will Fly for Food. (n.d.). <i>Ay, kay layo ng lamayo</i>. https://www.willflyforfood.net/ay-kay-layo-ng-lamayo/</p>
+
+      <p>Yummy Food PH. (n.d.). <i>Bingka dawa</i>. https://yummyfood.ph/recipe/bingka-dawa/</p>
        
       </div>
-
-
 
     </div>
   </main>
 
-  <!-- FOOTER -->
+
   <footer>
     <div class="footer-container">
       <div class="footer-left">
@@ -198,8 +239,8 @@
         <p>Email: b2029savgaborni@pshs.edu.ph</p>
       </div>
     </div>
-  </footer>
 
+  </footer>
 
 </body>
 </html>

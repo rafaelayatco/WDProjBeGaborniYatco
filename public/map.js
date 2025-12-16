@@ -5,7 +5,6 @@ const infoDesc = document.getElementById('info-desc');
 const exploreBtn = document.getElementById('explore-btn');
 const closeBtn = document.getElementById('close-panel');
 
-// Wait for SVG to fully load
 mapObject.addEventListener('load', () => {
   const svgDoc = mapObject.contentDocument;
   const dots = svgDoc.querySelectorAll('.region-dot');
@@ -37,3 +36,8 @@ mapObject.addEventListener('load', () => {
     svg.setAttribute('viewBox', originalViewBox);
   });
 });
+
+/* Note from Rafa: This JavaScript file adds interactivity to an embedded SVG map by detecting clicks on 
+region dots and displaying related information in an info panel. When a dot is clicked, the script 
+updates the title, description, and link dynamically, then zooms the SVG map into the selected region by adjusting its viewBox. 
+Clicking the close button hides the info panel and restores the map to its original view.*/

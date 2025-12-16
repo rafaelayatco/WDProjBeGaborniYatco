@@ -1,23 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Project Webpage 1">
-  <meta name="keywords" content="HTML basic tags">
-  <meta name="author" content="R YATCO">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pamana Adventures Homepage" />
+  <meta name="keywords" content="HTML, Culture, Travel, Philippines" />
+  <meta name="author" content="R YATCO S GABORNI" />
 
-  <title>Pamana Adventures</title>
+  <title>Pamana Adventures | Travel Guide</title>
   <link rel="icon" type="image/x-icon" href="../assets/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 
   <style>
+   
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      filter: brightness(0.4);
+    }
+
+    /* dark overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: -1;
+    }
+
+    main {
+      padding: 50px 8%;
+      color: white;
+    }
+
+    main h1, p{
+      text-align: center;
+      margin-bottom: 40px;
+       font-family: 'Gabriel Sans', sans-serif;
+      margin: 5%;
+    }
+     
+    
+    footer p {
+      font-family: 'Gabriel Sans', sans-serif;
+      margin: 0%;
+    }
+
+    .guide-container {
+      display: grid;
+      gap: 25px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .tip-category {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 14px;
+      padding: 20px 24px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+      color: #333;
+    }
+
+    .tip-category:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+      background: #f1fbff;
+    }
+
+    .tip-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tip-header h2 {
+      margin: 0;
+      font-size: 1.6rem;
+      color: #256877;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tip-header i {
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+    }
+
+    .tip-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      margin-top: 15px;
+    }
+
+    .tip-content ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .tip-content li {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .tip-category.active .tip-content {
+      max-height: 500px;
+    }
+
+    .tip-category.active .tip-header i.fa-chevron-down {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 30px 5%;
+      }
+    }
 
   </style>
 </head>
 
 <body>
+
+
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="../assets/backgrounds/travel.mp4" type="video/mp4">
+  </video>
+
   <header>
     <div class="top">
       <img src="../assets/logo.png" alt="Pamana Adventures Logo">
@@ -28,34 +145,105 @@
     </div>
   </header>
 
-  <nav class="nav">
-    <a href="../index.html">
-      <i class="fa-solid fa-house"></i> <span>Home</span>
-    </a>
-    <a href="touristspots.html">
-      <i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span>
-    </a>
-    <a href="culture.html">
-      <i class="fa-solid fa-sun"></i> <span>Culture</span>
-    </a>
-    <a href="food.html">
-      <i class="fa-solid fa-utensils"></i> <span>Food</span>
-    </a>
-    <a href="travelguide.html" class="active">
-      <i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span>
-    </a>
-    <a href="sources.html">
-      <i class="fa-solid fa-book"></i> <span>Sources</span>
-    </a>
+<nav class="nav">
+    <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+    <a href="touristspots.html"><i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span></a>
+    <a href="culture.html"><i class="fa-solid fa-sun"></i> <span>Culture</span></a>
+    <a href="food.html"><i class="fa-solid fa-utensils"></i> <span>Food</span></a>
+    <a href="travelguide.html" class="active"><i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span></a>
+    <a href="sources.html"><i class="fa-solid fa-book"></i> <span>Sources</span></a>
   </nav>
-
 
   <main>
     <h1>Travel Guide</h1>
+
+    <div class="guide-container">
+
+      <div class="tip-category">
+        <div class="tip-header">
+          <h2><i class="fa-solid fa-wallet"></i> Budget & Planning</h2>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="tip-content">
+          <ul>
+            <li>Check for ATMs on the islands in the Philippines.</li>
+            <li>Keep pesos at hand for airport departure fees.</li>
+            <li>If you’re low on budget or time, book everything ahead.</li>
+            <li>Leave plenty of time for travelling between islands.</li>
+            <li>Get proof of any delays or cancellations immediately.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-category">
+        <div class="tip-header">
+          <h2><i class="fa-solid fa-shield-heart"></i> Safety & Health</h2>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="tip-content">
+          <ul>
+            <li>Do not drink tap water in the Philippines.</li>
+            <li>Take mosquito repellent at all times.</li>
+            <li>Bring all medication you might need.</li>
+            <li>Invest in a waterproof diving bag.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-category">
+        <div class="tip-header">
+          <h2><i class="fa-solid fa-suitcase-rolling"></i> Packing Essentials</h2>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="tip-content">
+          <ul>
+            <li>Pack lightly.</li>
+            <li>Take flip flops and expect to ruin them.</li>
+            <li>Bring comfortable water shoes.</li>
+            <li>Take a jumper, leggings, and socks for cold transport.</li>
+            <li>Use an umbrella instead of a raincoat.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-category">
+        <div class="tip-header">
+          <h2><i class="fa-solid fa-people-group"></i> Local Experience</h2>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="tip-content">
+          <ul>
+            <li>Befriend the Filipino locals — they’re warm and helpful.</li>
+            <li>Buy a local SIM or portable WiFi hotspot.</li>
+            <li>Always try to get a window seat when travelling.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </main>
 
-  <footer>
-    <p>All Rights Reserved</p>
+   <footer>
+    <div class="footer-container">
+      <div class="footer-left"><p>Follow us on Facebook | Instagram | Twitter | YouTube</p></div>
+      <div class="footer-center"><p>2025 Pamana Adventures. All Rights Reserved.</p></div>
+      <div class="footer-right">
+        <p><b>Contact Information</b></p>
+        <p>Email: b2029rmyatco@pshs.edu.ph</p>
+        <p>Email: b2029savgaborni@pshs.edu.ph</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    const categories = document.querySelectorAll(".tip-category");
+
+    categories.forEach(category => {
+      category.addEventListener("click", () => {
+        category.classList.toggle("active");
+      });
+    });
+  </script>
+
 </body>
 </html>
