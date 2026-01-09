@@ -65,6 +65,16 @@ In our website you can explore regional tourist attractions, uncover hidden gems
 **Form Design and Purpose:**
 The website will implement a comprehensive Sign-Up and Travel Preference Form. This form allows users to input personal travel details and preferences in a single interaction. The purpose of the form is to create a basic traveler profile that enables personalized content across multiple webpages.
 
+**Form Elements to be Used:**
+- Text input (Name)
+- Email input (Email address)
+- Dropdown menu (Preferred travel region)
+- Checkboxes (Travel interests)
+- Radio buttons (Food preference)
+- Range slider or dropdown (Budget range)
+- Checkbox (Terms and conditions)
+- Submit button
+
 ### Wireframe
 #### Home Page:
 ![alt text](assets/wireframe/1.png)
