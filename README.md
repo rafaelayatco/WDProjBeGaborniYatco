@@ -60,6 +60,11 @@ In our website you can explore regional tourist attractions, uncover hidden gems
 - **Interactive Links:** All sources and references used to create the website will be listed on this page. Hovering over a link will trigger a color change to indicate interactivity.
 
 ******
+### HTML Form Incorporation
+
+**Form Design and Purpose:**
+The website will implement a comprehensive Sign-Up and Travel Preference Form. This form allows users to input personal travel details and preferences in a single interaction. The purpose of the form is to create a basic traveler profile that enables personalized content across multiple webpages.
+
 ### Wireframe
 #### Home Page:
 ![alt text](assets/wireframe/1.png)
