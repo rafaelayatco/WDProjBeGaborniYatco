@@ -12,6 +12,9 @@ In our website you can explore regional tourist attractions, uncover hidden gems
 ******
 ## Webpage Breakdown:
 
+- **Entry / Sign-Up Page (Onboarding Page):**
+This page will serve as a required onboarding or loading page before users can access the Home Page. Users must complete a sign-up and personalization form to proceed. The form collects basic user information and travel preferences to personalize the website experience.
+
 - **Home Page:** The home page will contain a menu that allows users to navigate to the five other web pages. It will feature an engaging background highlighting the beauty of a destination, a brief introduction to what the site offers.
 
 - **P1 (Tourist Spots Overview):** This page will showcase an overview of the main tourist spots featured on the website. Each featured spot will include a short description, captivating images, and key information such as location, best time to visit, and must-see features.
@@ -22,10 +25,26 @@ In our website you can explore regional tourist attractions, uncover hidden gems
 
 - **P4 (Travel Guide and Contact Information):** This page will serve as a practical guide for travelers, offering information such as transportation options, accommodation tips, safety reminders, and budget-friendly travel advice. This page will also provide a travel guide and contact information for inquiries.
 
-- **P5 (Sources):** The final page will list all the sources, references, and materials used in the creation of the website’s content. Proper citations will be included to acknowledge authors, photographers, and informational sites that contributed to the project’s development.
+- **P5 (My Travel Profile):**
+This page will display the user’s saved information and preferences gathered from the sign-up form, allowing users to review their personalized travel profile.
+
+- **P6 (Personalized Recommendations):**
+This page will automatically generate destination and activity recommendations based on the user’s saved travel preferences.
+
+- **P7 (Sources):** The final page will list all the sources, references, and materials used in the creation of the website’s content. Proper citations will be included to acknowledge authors, photographers, and informational sites that contributed to the project’s development.
 
 ******
 ## JS Incorporation
+
+### Sign-Up Page (Onboarding Page):
+
+- **Form Validation:** Users must complete all required fields before proceeding to the home page.
+
+- **Local Storage Usage:** User input will be stored using JavaScript Local Storage.
+
+- **Redirect Function:** Upon successful submission, users are redirected to the Home Page.
+
+- **Access Control Check:** Other pages will check if user data exists in localStorage and redirect users to the Sign-Up Page if no data is found.
 
 ### Home Page:
 
@@ -49,18 +68,50 @@ In our website you can explore regional tourist attractions, uncover hidden gems
 
 - **Rotating Plate Slideshow:** This page will feature a dynamic slideshow where regional dishes from Luzon, Visayas, and Mindanao appear on a virtual plate. Users can slide left or right to view different dishes. JavaScript and CSS transitions will animate the plate to create a smooth rotating effect between dishes.
 
+- **Interactive Filtering:** Content updates instantly when checkboxes are selected or deselected.
+
+- **Preference Syncing:** Selected filters can update and synchronize with saved user preferences.
+
+- **DOM Manipulation:** Shows food and restaurant recommendations without page reload.
+
+
 ### Travel Guide Page:
 
 - **Expandable Tip Categories:** Travel tips will be organized into categories such as Budget Travel, Safety Tips, Packing Essentials, and Local Etiquette. Each category will appear as a collapsible panel; clicking will smoothly expand the section to reveal related tips, and collapse when clicked again. 
 
 - **Hover Animations:** Category boxes will respond to hovering with subtle color changes, shadow effects, and a slight lift, indicating that they are clickable.
 
+### Travel Profile Page 
+
+- **Data Retrieval:** Retrieves user profile and preference data from localStorage.
+
+- **Dynamic Content Display:** Automatically populates profile fields (name, email, preferences) without manual input.
+
+- **Edit Option:** Allows users to update their preferences, overwriting previous data in localStorage.
+
+- **State Persistence:** Any updates remain saved even after refreshing or reopening the website.
+
+
+### Personalized Reccomendations Page
+
+- **Preference Matching Logic:** Compares user-selected preferences with predefined tags assigned to destinations and food items. This would utilize the given fields in the sign-up form given during the loading page.
+
+- **Scoring System:** Assigns a simple match score to each item based on shared preferences.
+
+- **Dynamic Rendering:** Displays only the top-matching destinations and food recommendations.
+
+ - **Contextual Labels:**  Adds indicators such as “Highly Recommended” or “Recommended for You” based on match scores.
+
+ - **Visual Rating Indicators:** Tourist spots will display simple visual ratings (e.g., stars or labels) based on preference match scores.
+
 ### Sources Page:
 
 - **Interactive Links:** All sources and references used to create the website will be listed on this page. Hovering over a link will trigger a color change to indicate interactivity.
 
 ******
-### HTML Form Incorporation
+## HTML Form Incorporation
+
+### Sign-Up Form
 
 **Form Design and Purpose:**
 The website will implement a comprehensive Sign-Up and Travel Preference Form. This form allows users to input personal travel details and preferences in a single interaction. The purpose of the form is to create a basic traveler profile that enables personalized content across multiple webpages.
@@ -75,20 +126,34 @@ The website will implement a comprehensive Sign-Up and Travel Preference Form. T
 - Checkbox (Terms and conditions)
 - Submit button
 
-### Wireframe
+Form data will be stored locally using JavaScript and reused across multiple webpages which are the Home Page, Tourist Spots (showing the ratings) Page, and Personalized Reccomendations Page.
+
+### Food Preference Filter Form
+
+A secondary form will be embedded in the Food Reccomendations page. This form allows users to temporarily filter displayed content using checkboxes and dropdowns without permanently altering stored user data.
+
+******
+## Wireframe
+******
+### Sign-Up Form:
+![alt text](assets/wireframe/signup.png)
 #### Home Page:
-![alt text](assets/wireframe/1.png)
-#### Tourist Spots:
 ![alt text](assets/wireframe/2.png)
+#### Tourist Spots:
+![alt text](assets/wireframe/3.png)
 When the location icon is clicked:
-![alt text](assets/wireframe/Wireframe.png)
-#### Culture:
 ![alt text](assets/wireframe/4.png)
-When the image is clicked:
+#### Culture:
 ![alt text](assets/wireframe/5.png)
-#### Food Recommendations:
+When the image is clicked:
 ![alt text](assets/wireframe/6.png)
+#### Food Recommendations:
+![alt text](assets/wireframe/7.png)
 #### Travel Guide:
-![alt text](assests/wireframe/7.png)
+![alt text](assets/wireframe/travelguide.png)
+#### Travel Profile:
+![alt text](assets/wireframe/9.png)
+#### Recommended Attractions:
+![alt text](assets/wireframe/10.png)
 #### Sources:
-![alt text](assets/wireframe/8.png)
+![alt text](assets/wireframe/11.png)
