@@ -5,7 +5,7 @@
 ![Pamana Adventures Logo](assets/logo.png)
 
 ## Description
-Pamana Adventures, your ultimate travel companion for exploring the wonders of the Philippines. From pristine beaches and lush mountains to lively festivals and rich cultural heritage, our website is your one stop tour guide through the islands’ destinations of the Pearl of the Orient Seas. Every journey is designed to connect you not only with stunning landscapes, but also with the stories, traditions, and history that make the Philippines one of a kind.
+Pamana Adventures, your ultimate travel companion for exploring the wonders of the Philippines. From pristine beaches and lush mountains to lively festivals and rich cultural heritage, our website is your one-stop tour guide through the islands’ destinations of the Pearl of the Orient Seas. Every journey is designed to connect you not only with stunning landscapes, but also with the stories, traditions, and history that make the Philippines one of a kind.
 
 In our website you can explore regional tourist attractions, uncover hidden gems, foodie trips, and plan your adventures with helpful tips and interactive guides. Whether you’re a first-time traveler or a seasoned explorer, Pamana Adventures ensures every trip is meaningful, memorable, and full of cultural discovery. With Pamana Adventures, you can feel that it is truly more fun in the Philippines. 
 
@@ -26,7 +26,7 @@ This page will serve as a required onboarding or loading page before users can a
 - **P4 (Travel Guide and Contact Information):** This page will serve as a practical guide for travelers, offering information such as transportation options, accommodation tips, safety reminders, and budget-friendly travel advice. This page will also provide a travel guide and contact information for inquiries.
 
 - **P5 (My Travel Profile):**
-This page will display the user’s saved information and preferences gathered from the sign-up form, allowing users to review their personalized travel profile.
+This page will display the user’s saved information and preferences gathered from the sign-up form, allowing users to review their personalized travel profile. This displays data linked to the currently logged-in account only, ensuring each user has their own private and personalized travel profile.
 
 - **P6 (Personalized Recommendations):**
 This page will automatically generate destination and activity recommendations based on the user’s saved travel preferences.
@@ -45,6 +45,12 @@ This page will automatically generate destination and activity recommendations b
 - **Redirect Function:** Upon successful submission, users are redirected to the Home Page.
 
 - **Access Control Check:** Other pages will check if user data exists in localStorage and redirect users to the Sign-Up Page if no data is found.
+
+- **Password Storage:** User passwords and profile data will be saved locally for educational purposes.
+
+- **Login Validation:** The system will verify stored credentials before allowing access to personalized pages.
+
+- **User-Specific Webpages:** Each logged-in user accesses their own saved travel profile and recommendations.
 
 ### Home Page:
 
@@ -92,7 +98,7 @@ This page will automatically generate destination and activity recommendations b
 - **State Persistence:** Any updates remain saved even after refreshing or reopening the website.
 
 
-### Personalized Reccomendations Page
+### Personalized Recommendations Page
 
 - **Preference Matching Logic:** Compares user-selected preferences with predefined tags assigned to destinations and food items. This would utilize the given fields in the sign-up form given during the loading page.
 
@@ -116,6 +122,8 @@ This page will automatically generate destination and activity recommendations b
 **Form Design and Purpose:**
 The website will implement a comprehensive Sign-Up and Travel Preference Form. This form allows users to input personal travel details and preferences in a single interaction. The purpose of the form is to create a basic traveler profile that enables personalized content across multiple webpages.
 
+To enhance the user experience, Pamana Adventures will implement a basic user account system through the help of the sign-up form. During the sign-up process, users will create an account with their email and password. Account information and preferences will be securely saved locally. This allows users to log in on return visits and access their own personalized pages, including their Travel Profile and Personalized Recommendations. Each account is unique, ensuring that every user sees content tailored specifically to their preferences and interests.
+
 **Form Elements to be Used:**
 - Text input (Name)
 - Email input (Email address)
@@ -136,7 +144,7 @@ A secondary form will be embedded in the Food Reccomendations page. This form al
 ## Wireframe
 ******
 ### Sign-Up Form:
-![alt text](assets/wireframe/signup.png)
+![alt text](assets/wireframe/login.png)
 #### Home Page:
 ![alt text](assets/wireframe/2.png)
 #### Tourist Spots:
