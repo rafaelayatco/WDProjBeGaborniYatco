@@ -1,0 +1,32 @@
+<script>
+  if (!localStorage.getItem("currentUser")) {
+    window.location.href = "signup.html";
+  }
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Travel Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+  <h1>My Travel Profile</h1>
+
+  <div class="profile-card">
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Region:</strong> <span id="region"></span></p>
+    <p><strong>Interests:</strong> <span id="interests"></span></p>
+    <p><strong>Food Preference:</strong> <span id="food"></span></p>
+    <p><strong>Budget:</strong> <span id="budget"></span></p>
+  </div>
+
+  <button onclick="logout()">Log Out</button>
+
+  <script src="profile.js"></script>
+</body>
+</html>

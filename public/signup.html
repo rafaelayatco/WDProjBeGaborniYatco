@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome | Pamana Adventures</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+  <h1>Pamana Adventures</h1>
+  <p>Create an account or log in to continue</p>
+
+  <div class="form-container">
+
+    <div class="toggle">
+      <button onclick="showSignup()">Sign Up</button>
+      <button onclick="showLogin()">Log In</button>
+    </div>
+
+    <!-- SIGN UP FORM -->
+    <form id="signupForm">
+      <h2>Sign Up</h2>
+
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+
+      <select id="region" required>
+        <option value="">Preferred Region</option>
+        <option>Luzon</option>
+        <option>Visayas</option>
+        <option>Mindanao</option>
+      </select>
+
+      <label>Travel Interests</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="Beaches"> Beaches</label>
+        <label><input type="checkbox" value="Mountains"> Mountains</label>
+        <label><input type="checkbox" value="Culture"> Culture</label>
+      </div>
+
+      <label>Food Preference</label>
+      <label><input type="radio" name="food" value="Seafood" required> Seafood</label>
+      <label><input type="radio" name="food" value="Meat"> Meat</label>
+      <label><input type="radio" name="food" value="Vegetarian"> Vegetarian</label>
+
+      <label>Budget</label>
+      <select id="budget">
+        <option>Low</option>
+        <option>Mid</option>
+        <option>High</option>
+      </select>
+
+      <label><input type="checkbox" required> I agree to the terms</label>
+
+      <button type="submit">Create Account</button>
+    </form>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" style="display:none;">
+      <h2>Log In</h2>
+
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+
+      <button type="submit">Log In</button>
+    </form>
+
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
