@@ -1,119 +1,86 @@
-// GET STORAGE
-const users = JSON.parse(localStorage.getItem("users")) || {};
-const currentEmail = localStorage.getItem("currentUser");
+document.addEventListener("DOMContentLoaded", () => {
+  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-// SECURITY CHECK
-if (!currentEmail || !users[currentEmail]) {
-  alert("Please log in first.");
-  window.location.href = "signup.html";
-}
-
-// USER DATA
-let user = users[currentEmail];
-let isEditing = false;
-
-// ELEMENTS
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const regionInput = document.getElementById("region");
-const budgetSelect = document.getElementById("budget");
-
-const foodButtons = document.querySelectorAll(".food-buttons button");
-const favs = document.querySelectorAll(".fav");
-
-const editBtn = document.getElementById("editBtn");
-const saveBtn = document.getElementById("saveBtn");
-const logoutBtn = document.getElementById("logoutBtn");
-
-// --------------------
-// LOAD USER DATA
-// --------------------
-nameInput.value = user.name || "";
-emailInput.value = currentEmail;
-regionInput.value = user.region || "";
-budgetSelect.value = user.budget || "Low";
-
-// FOOD
-foodButtons.forEach(btn => {
-  if (btn.dataset.food === user.food) {
-    btn.classList.add("active");
+  if (!currentUser) {
+    console.error("No user found");
+    return;
   }
 
-  btn.onclick = () => {
-    if (!isEditing) return;
-    foodButtons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-  };
-});
+  // ELEMENTS
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const regionSelect = document.getElementById("region");
+  const budgetSelect = document.getElementById("budget");
 
-// FAVORITES
-favs.forEach((fav, index) => {
-  if (user.favorites && user.favorites.includes(index)) {
-    fav.classList.add("active");
+  const editBtn = document.getElementById("editBtn");
+  const saveBtn = document.getElementById("saveBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  const avatarPreview = document.getElementById("avatarPreview");
+  const avatarInput = document.getElementById("avatarInput");
+  const changeAvatarBtn = document.getElementById("changeAvatarBtn");
+
+  // LOAD DATA (SAFE DEFAULTS)
+  nameInput.value = currentUser.name || "";
+  emailInput.value = currentUser.email || "";
+  regionSelect.value = currentUser.region || "Luzon";
+  budgetSelect.value = currentUser.budget || "Low";
+
+  if (currentUser.avatar) {
+    avatarPreview.src = currentUser.avatar;
   }
 
-  fav.onclick = () => {
-    if (!isEditing) return;
-    fav.classList.toggle("active");
-  };
-});
+  // EDIT MODE
+  editBtn.addEventListener("click", () => {
+    nameInput.disabled = false;
+    regionSelect.disabled = false;
+    budgetSelect.disabled = false;
+    changeAvatarBtn.disabled = false;
 
-// --------------------
-// EDIT MODE CONTROL
-// --------------------
-function setEditing(state) {
-  isEditing = state;
-
-  nameInput.disabled = !state;
-  emailInput.disabled = true; // email NEVER editable
-  regionInput.disabled = !state;
-  budgetSelect.disabled = !state;
-}
-
-// FORCE DISABLED ON LOAD ✅
-setEditing(false);
-
-// --------------------
-// EDIT BUTTON
-// --------------------
-editBtn.onclick = () => {
-  setEditing(true);
-};
-
-// --------------------
-// SAVE BUTTON
-// --------------------
-saveBtn.onclick = () => {
-  const selectedFood =
-    document.querySelector(".food-buttons .active")?.dataset.food || "";
-
-  const favorites = [];
-  favs.forEach((fav, i) => {
-    if (fav.classList.contains("active")) favorites.push(i);
+    editBtn.style.display = "none";
+    saveBtn.style.display = "inline-block";
   });
 
-  // UPDATE USER
-  users[currentEmail] = {
-    ...user,
-    name: nameInput.value,
-    region: regionInput.value,
-    budget: budgetSelect.value,
-    food: selectedFood,
-    favorites: favorites
-  };
-
   // SAVE
-  localStorage.setItem("users", JSON.stringify(users));
-  user = users[currentEmail];
+  saveBtn.addEventListener("click", () => {
+    nameInput.disabled = true;
+    regionSelect.disabled = true;
+    budgetSelect.disabled = true;
+    changeAvatarBtn.disabled = true;
 
-  setEditing(false);
-  alert("Profile saved successfully!");
-};
+    currentUser.name = nameInput.value;
+    currentUser.region = regionSelect.value;
+    currentUser.budget = budgetSelect.value;
 
-// --------------------
-// LOGOUT
-// --------------------
-logoutBtn.onclick = () => {
-  localStorage.removeItem("currentUser");
-  window.location.href = "../index.html";
-};
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+    saveBtn.style.display = "none";
+    editBtn.style.display = "inline-block";
+
+    alert("Profile saved!");
+  });
+
+  // AVATAR
+  changeAvatarBtn.addEventListener("click", () => {
+    avatarInput.click();
+  });
+
+  avatarInput.addEventListener("change", () => {
+    const file = avatarInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      avatarPreview.src = reader.result;
+      currentUser.avatar = reader.result;
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // LOGOUT
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("currentUser");
+    window.location.href = "../index.html";
+  });
+});

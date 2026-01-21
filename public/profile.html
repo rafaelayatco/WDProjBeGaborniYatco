@@ -1,104 +1,130 @@
+<script>
+  if (!localStorage.getItem("currentUser")) {
+    window.location.href = "../index.html";
+  }
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Travel Profile</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pamana Adventures Homepage" />
+  <meta name="keywords" content="HTML, Culture, Travel, Philippines" />
+  <meta name="author" content="R YATCO S GABORNI" />
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #e6f2f3;
-  padding: 40px;
-}
+  <title>Profile | Pamana Adventures</title>
 
-.container {
-  background: white;
-  padding: 30px;
-  max-width: 600px;
-  margin: auto;
-}
+  <link rel="icon" href="../assets/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
+  <style>
+    #bg-video {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
 
-input, select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-}
+    .profile-box {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 10px;
+    }
 
-.food-buttons button {
-  margin-right: 10px;
-  padding: 6px 12px;
-}
+    .avatar-section {
+      text-align: center;
+    }
 
-.food-buttons .active {
-  background: teal;
-  color: white;
-}
+    .avatar-section img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #ccc;
+    }
 
-.fav {
-  width: 80px;
-  height: 50px;
-  background: #ccc;
-  display: inline-block;
-  margin-right: 10px;
-  cursor: pointer;
-}
+    input, select {
+      width: 100%;
+      margin: 8px 0;
+      padding: 8px;
+    }
 
-.fav.active {
-  outline: 3px solid teal;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-}
-</style>
+    button {
+      margin-top: 10px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h2>Travel Profile</h2>
+<video autoplay muted loop id="bg-video">
+  <source src="../assets/backgrounds/backgroundvid.mp4" type="video/mp4">
+</video>
 
-  <label>Full Name</label>
-  <input id="name">
-
-  <label>Email</label>
-  <input id="email">
-
-  <label>Region</label>
-  <input id="region">
-
-  <label>Budget</label>
-  <select id="budget">
-    <option>Low</option>
-    <option>Mid</option>
-    <option>High</option>
-  </select>
-
-  <label>Food Preference</label>
-  <div class="food-buttons">
-    <button data-food="Seafood">Seafood</button>
-    <button data-food="Meat">Meat</button>
-    <button data-food="Vegetarian">Vegetarian</button>
+<header>
+  <div class="top">
+    <img src="../assets/logo.png" style="height:80px;">
+    <div>
+      <h1>Pamana Adventures</h1>
+      <h3>Where Culture Meets Adventure</h3>
+    </div>
   </div>
+</header>
 
-  <label>Favorites</label>
-  <div>
-    <div class="fav"></div>
-    <div class="fav"></div>
-    <div class="fav"></div>
+<nav class="nav">
+    <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+    <a href="touristspots.html"><i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span></a>
+    <a href="culture.html"><i class="fa-solid fa-sun"></i> <span>Culture</span></a>
+    <a href="food.html"><i class="fa-solid fa-utensils"></i> <span>Food</span></a>
+    <a href="travelguide.html"><i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span></a>
+    <a href="profile.html"  class="active"><i class="fa-solid fa-circle-user"></i><span>Profile</span></a>
+    <a href="sources.html"><i class="fa-solid fa-book"></i> <span>Sources</span></a>
+  </nav>
+
+<main>
+  <div class="profile-box">
+
+    <div class="avatar-section">
+      <img id="avatarPreview" src="../assets/default-avatar.png">
+      <br>
+      <input type="file" id="avatarInput" accept="image/*" hidden>
+      <button id="changeAvatarBtn" disabled>Change Avatar</button>
+    </div>
+
+    <label>Name</label>
+    <input id="name" disabled>
+
+    <label>Email</label>
+    <input id="email" disabled>
+
+    <label>Region</label>
+    <select id="region" disabled>
+      <option>Luzon</option>
+      <option>Visayas</option>
+      <option>Mindanao</option>
+    </select>
+
+    <label>Budget</label>
+    <select id="budget" disabled>
+      <option>Low</option>
+      <option>Mid</option>
+      <option>High</option>
+    </select>
+
+    <button id="editBtn">Edit Profile</button>
+    <button id="saveBtn" style="display:none;">Save</button>
+    <button id="logoutBtn">Logout</button>
+
   </div>
-
-  <button id="editBtn">EDIT</button>
-  <button id="saveBtn">SAVE</button>
-  <button id="logoutBtn">LOGOUT</button>
-</div>
+</main>
 
 <script src="profile.js"></script>
 </body>
