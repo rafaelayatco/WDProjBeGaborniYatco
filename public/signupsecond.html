@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up | Pamana Adventures</title>
+
+<link rel="icon" href="../assets/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* ===== Background Placeholder ===== */
+.bg {
+    position: fixed;
+    inset: 0;
+    background: url("../assets/backgrounds/bg.jpg") center/cover no-repeat;
+    z-index: -2;
+}
+
+.bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+/* ===== Navbar ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    background: rgba(31,111,120,0.95);
+    padding: 12px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.2);
+    border-radius: 6px;
+}
+
+/* ===== Page Center ===== */
+.wrapper {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Signup Form ===== */
+#signupForm {
+    width: 680px;
+    background: rgba(255,255,255,0.95);
+    padding: 35px 50px;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+input, select {
+    width: 100%;
+    padding: 9px 10px;
+    font-size: 14px;
+    border: 1px solid #aaa;
+    background-color: #f1e7e3;
+    border-radius: 4px;
+}
+
+.budget-row {
+    display: flex;
+    gap: 10px;
+}
+
+.options {
+    display: flex;
+    gap: 18px;
+    margin-top: 4px;
+}
+
+.options input {
+    margin-right: 6px;
+}
+
+.terms {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    font-weight: 600;
+}
+
+button {
+    display: block;
+    margin: 28px auto 0;
+    padding: 10px 40px;
+    background: #1f6f78;
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #165b61;
+}
+</style>
+
+<script>
+if (localStorage.getItem("currentUser")) {
+    window.location.href = "../index.html";
+}
+</script>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="touristspots.html"><i class="fa-solid fa-location-dot"></i> Tourist Spots</a>
+    <a href="culture.html"><i class="fa-solid fa-sun"></i> Culture</a>
+    <a href="food.html"><i class="fa-solid fa-utensils"></i> Food</a>
+    <a href="travelguide.html"><i class="fa-solid fa-suitcase"></i> Travel Guide</a>
+    <a href="profile.html"><i class="fa-solid fa-circle-user"></i> Profile</a>
+</nav>
+
+<!-- SIGN UP FORM (ITO TALAGA YAN 😅) -->
+<div class="wrapper">
+<form id="signupForm">
+
+<h2>Create Your Travel Profile</h2>
+
+<label>Email Address</label>
+<input type="email" id="email" required>
+
+<label>Password</label>
+<input type="password" id="password" required>
+
+<label>Full Name</label>
+<input type="text" id="name" required>
+
+<label>Budget (PHP)</label>
+<div class="budget-row">
+    <select id="budgetMin">
+        <option disabled selected>MINIMUM</option>
+        <option>1,000</option>
+        <option>5,000</option>
+        <option>10,000</option>
+        <option>20,000</option>
+    </select>
+    <select id="budgetMax">
+        <option disabled selected>MAXIMUM</option>
+        <option>10,000</option>
+        <option>20,000</option>
+        <option>50,000</option>
+        <option>100,000</option>
+    </select>
+</div>
+
+<label>Preferred Travel Region</label>
+<select id="region">
+    <option>Luzon</option>
+    <option>Visayas</option>
+    <option>Mindanao</option>
+</select>
+
+<label>Food Preference</label>
+<div class="options">
+    <label><input type="radio" name="food" value="Local" checked> Local</label>
+    <label><input type="radio" name="food" value="International"> International</label>
+    <label><input type="radio" name="food" value="Vegan"> Vegan</label>
+</div>
+
+<label>Interests</label>
+<div class="options">
+    <label><input type="checkbox" value="Sightseeing"> Sightseeing</label>
+    <label><input type="checkbox" value="Swimming"> Swimming</label>
+    <label><input type="checkbox" value="Historical Tours"> Historical Tours</label>
+</div>
+
+<div class="terms">
+    <input type="checkbox" required>
+    Terms and Conditions
+</div>
+
+<button type="submit">REGISTER</button>
+
+</form>
+</div>
+
+<script src="../assets/js/auth.js"></script>
+</body>
+</html>
