@@ -6,10 +6,31 @@
 
   <style>
     /* RESET */
+    @font-face {
+    font-family: 'Kawit Condensed';
+    src: url('../assets/fonts/KawitFree-Italic.ttf') format('truetype');
+    }
+
+    @font-face {
+    font-family: 'Gabriel Sans';
+    src: url('../assets/fonts/GabrielSans-Trial-Medium.ttf') format('truetype');
+    }
+
     * {
       box-sizing: border-box;
       font-family: 'Gabriel Sans', sans-serif;
     }
+
+    #bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
 
     body {
       margin: 0;
@@ -25,10 +46,15 @@
       width: 100%;
       max-width: 720px;
       text-align: center;
+      .page {
+    z-index: 1;
+}
+
     }
 
     h1 {
       margin-bottom: 5px;
+      font-family: 'Kawit Condensed';
     }
 
     p {
@@ -128,6 +154,10 @@
 </head>
 
 <body>
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="../assets/backgrounds/backgroundvid.mp4" type="video/mp4">
+</video>
+
 
   <div class="page">
     <h1>Pamana Adventures</h1>
