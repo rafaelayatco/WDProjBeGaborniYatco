@@ -91,60 +91,72 @@
   </circle>
  </g>
 
-  <g id="interactive-dots">
-  <circle class="region-dot" cx="467.6" cy="275.5" r="6"
-          data-title="Banaue Rice Terraces"
-          data-desc="A UNESCO World Heritage Site carved into the mountains of Ifugao."
-          data-link="/public/touristspots/banauericeterraces.html" />
-  <circle class="region-dot" cx="509.9" cy="560.7" r="6"
-          data-title="Boracay"
-          data-desc="World-famous for its powdery white sand beaches and sunsets."
-          data-link="/public/touristspots/boracay.html" />
-  <circle class="region-dot" cx="630.7" cy="673.8" r="6"
-          data-title="Chocolate Hills"
-          data-desc="Over 1,200 natural limestone hills found in Bohol."
-          data-link="/public/touristspots/chocolatehills.html" />
-  <circle class="region-dot" cx="730.6" cy="675.4" r="6"
-          data-title="Cloud 9, Siargao"
-          data-desc="A world-class surfing destination famous for its powerful waves."
-          data-link="/public/touristspots/cloud9.html" />
-  <circle class="region-dot" cx="375.6" cy="610.4" r="6"
-          data-title="El Nido"
-          data-desc="Known for limestone cliffs, lagoons, and crystal-clear waters."
-          data-link="/public/touristspots/elnido.html" />
-  <circle class="region-dot" cx="745.6" cy="770.4" r="6"
-          data-title="Enchanted River"
-          data-desc="A deep-blue river believed to be mystical and crystal clear."
-          data-link="/public/touristspots/enchantedriver.html" />
-  <circle class="region-dot" cx="360.6" cy="675.4" r="6"
-          data-title="Honda Bay"
-          data-desc="A group of islands in Palawan perfect for snorkeling and island hopping."
-          data-link="/public/touristspots/hondabay.html" />
-  <circle class="region-dot" cx="405.6" cy="325.4" r="6"
-          data-title="Hundred Islands"
-          data-desc="A national park made up of over 100 scenic islands in Pangasinan."
-          data-link="/public/touristspots/hundredislands.html" />
-  <circle class="region-dot" cx="610.6" cy="650.4" r="6"
-          data-title="Magellan’s Cross"
-          data-desc="A historic Christian cross planted in Cebu in 1521."
-          data-link="/public/touristspots/magellanscross.html" />
-  <circle class="region-dot" cx="690.6" cy="830.4" r="6"
-          data-title="Mount Apo"
-          data-desc="The highest mountain in the Philippines and a biodiversity hotspot."
-          data-link="/public/touristspots/mountapo.html" />
-  <circle class="region-dot" cx="345.6" cy="660.4" r="6"
-          data-title="Puerto Princesa Underground River"
-          data-desc="One of the New 7 Wonders of Nature, flowing beneath limestone caves."
-          data-link="/public/touristspots/puertoprincesa.html" />
-  <circle class="region-dot" cx="595.6" cy="705.4" r="6"
-          data-title="Siquijor Island"
-          data-desc="An island province known for beaches, waterfalls, and folklore."
-          data-link="/public/touristspots/siquijor.html" />
-  <circle class="region-dot" cx="400.6" cy="730.4" r="6"
-          data-title="Tubbataha Reefs Natural Park"
-          data-desc="A marine sanctuary and UNESCO site famous for coral reefs."
-          data-link="/public/touristspots/tubbataha.html" />
-</g>
+        <g id="interactive-dots"> 
+        <circle class="region-dot" cx="467.6" cy="275.5" r="6"
+                data-title="Banaue Rice Terraces"
+                data-desc="A UNESCO World Heritage Site carved into the mountains of Ifugao."
+                data-link="./touristspots/banauericeterraces.html" />
+
+        <circle class="region-dot" cx="509.9" cy="560.7" r="6"
+                data-title="Boracay"
+                data-desc="World-famous for its powdery white sand beaches and sunsets."
+                data-link="./touristspots/boracay.html" />
+
+        <circle class="region-dot" cx="630.7" cy="673.8" r="6"
+                data-title="Chocolate Hills"
+                data-desc="Over 1,200 natural limestone hills found in Bohol."
+                data-link="./touristspots/chocolatehills.html" />
+
+        <circle class="region-dot" cx="730.6" cy="675.4" r="6"
+                data-title="Cloud 9, Siargao"
+                data-desc="A world-class surfing destination famous for its powerful waves."
+                data-link="./touristspots/cloud9.html" />
+
+        <circle class="region-dot" cx="375.6" cy="610.4" r="6"
+                data-title="El Nido"
+                data-desc="Known for limestone cliffs, lagoons, and crystal-clear waters."
+                data-link="./touristspots/elnido.html" />
+
+        <circle class="region-dot" cx="745.6" cy="770.4" r="6"
+                data-title="Enchanted River"
+                data-desc="A deep-blue river believed to be mystical and crystal clear."
+                data-link="./touristspots/enchantedriver.html" />
+
+        <circle class="region-dot" cx="360.6" cy="675.4" r="6"
+                data-title="Honda Bay"
+                data-desc="A group of islands in Palawan perfect for snorkeling and island hopping."
+                data-link="./touristspots/hondabay.html" />
+
+        <circle class="region-dot" cx="405.6" cy="325.4" r="6"
+                data-title="Hundred Islands"
+                data-desc="A national park made up of over 100 scenic islands in Pangasinan."
+                data-link="./touristspots/hundredislands.html" />
+
+        <circle class="region-dot" cx="610.6" cy="650.4" r="6"
+                data-title="Magellan’s Cross"
+                data-desc="A historic Christian cross planted in Cebu in 1521."
+                data-link="./touristspots/magellanscross.html" />
+
+        <circle class="region-dot" cx="690.6" cy="830.4" r="6"
+                data-title="Mount Apo"
+                data-desc="The highest mountain in the Philippines and a biodiversity hotspot."
+                data-link="./touristspots/mountapo.html" />
+
+        <circle class="region-dot" cx="345.6" cy="660.4" r="6"
+                data-title="Puerto Princesa Underground River"
+                data-desc="One of the New 7 Wonders of Nature, flowing beneath limestone caves."
+                data-link="./touristspots/puertoprincesa.html" />
+
+        <circle class="region-dot" cx="595.6" cy="705.4" r="6"
+                data-title="Siquijor Island"
+                data-desc="An island province known for beaches, waterfalls, and folklore."
+                data-link="./touristspots/siquijor.html" />
+
+        <circle class="region-dot" cx="400.6" cy="730.4" r="6"
+                data-title="Tubbataha Reefs Natural Park"
+                data-desc="A marine sanctuary and UNESCO site famous for coral reefs."
+                data-link="./touristspots/tubbataha.html" />
+        </g>
 
 
   <style>

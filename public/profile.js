@@ -1,65 +1,119 @@
-// Get stored data
-const users = JSON.parse(localStorage.getItem("users"));
-const currentUserEmail = localStorage.getItem("currentUser");
-const user = users[currentUserEmail];
+// GET STORAGE
+const users = JSON.parse(localStorage.getItem("users")) || {};
+const currentEmail = localStorage.getItem("currentUser");
 
-/* DISPLAY PROFILE */
-document.getElementById("name").textContent = user.name;
-document.getElementById("email").textContent = currentUserEmail;
-document.getElementById("region").textContent = user.region;
-document.getElementById("interests").textContent = user.interests.join(", ");
-document.getElementById("food").textContent = user.food;
-document.getElementById("budget").textContent = user.budget;
-
-/* ENABLE EDIT MODE */
-function enableEdit() {
-  document.getElementById("viewProfile").classList.add("hidden");
-  document.getElementById("editProfile").classList.remove("hidden");
-
-  // Pre-fill inputs
-  document.getElementById("editName").value = user.name;
-  document.getElementById("editEmail").value = currentUserEmail;
-  document.getElementById("editRegion").value = user.region;
-  document.getElementById("editInterests").value = user.interests.join(", ");
-
-  document.querySelector(`input[name="food"][value="${user.food}"]`).checked = true;
-  document.querySelector(`input[name="budget"][value="${user.budget}"]`).checked = true;
-}
-
-/* CANCEL EDIT */
-function cancelEdit() {
-  document.getElementById("editProfile").classList.add("hidden");
-  document.getElementById("viewProfile").classList.remove("hidden");
-}
-
-/* SAVE CHANGES */
-function saveProfile() {
-  const newEmail = document.getElementById("editEmail").value;
-
-  users[newEmail] = {
-    name: document.getElementById("editName").value,
-    region: document.getElementById("editRegion").value,
-    interests: document
-      .getElementById("editInterests")
-      .value.split(",")
-      .map(i => i.trim()),
-    food: document.querySelector('input[name="food"]:checked').value,
-    budget: document.querySelector('input[name="budget"]:checked').value,
-    password: user.password // keep existing password
-  };
-
-  // If email changed, remove old key
-  if (newEmail !== currentUserEmail) {
-    delete users[currentUserEmail];
-    localStorage.setItem("currentUser", newEmail);
-  }
-
-  localStorage.setItem("users", JSON.stringify(users));
-  location.reload();
-}
-
-/* LOG OUT */
-function logout() {
-  localStorage.removeItem("currentUser");
+// SECURITY CHECK
+if (!currentEmail || !users[currentEmail]) {
+  alert("Please log in first.");
   window.location.href = "signup.html";
 }
+
+// USER DATA
+let user = users[currentEmail];
+let isEditing = false;
+
+// ELEMENTS
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const regionInput = document.getElementById("region");
+const budgetSelect = document.getElementById("budget");
+
+const foodButtons = document.querySelectorAll(".food-buttons button");
+const favs = document.querySelectorAll(".fav");
+
+const editBtn = document.getElementById("editBtn");
+const saveBtn = document.getElementById("saveBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+
+// --------------------
+// LOAD USER DATA
+// --------------------
+nameInput.value = user.name || "";
+emailInput.value = currentEmail;
+regionInput.value = user.region || "";
+budgetSelect.value = user.budget || "Low";
+
+// FOOD
+foodButtons.forEach(btn => {
+  if (btn.dataset.food === user.food) {
+    btn.classList.add("active");
+  }
+
+  btn.onclick = () => {
+    if (!isEditing) return;
+    foodButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  };
+});
+
+// FAVORITES
+favs.forEach((fav, index) => {
+  if (user.favorites && user.favorites.includes(index)) {
+    fav.classList.add("active");
+  }
+
+  fav.onclick = () => {
+    if (!isEditing) return;
+    fav.classList.toggle("active");
+  };
+});
+
+// --------------------
+// EDIT MODE CONTROL
+// --------------------
+function setEditing(state) {
+  isEditing = state;
+
+  nameInput.disabled = !state;
+  emailInput.disabled = true; // email NEVER editable
+  regionInput.disabled = !state;
+  budgetSelect.disabled = !state;
+}
+
+// FORCE DISABLED ON LOAD ✅
+setEditing(false);
+
+// --------------------
+// EDIT BUTTON
+// --------------------
+editBtn.onclick = () => {
+  setEditing(true);
+};
+
+// --------------------
+// SAVE BUTTON
+// --------------------
+saveBtn.onclick = () => {
+  const selectedFood =
+    document.querySelector(".food-buttons .active")?.dataset.food || "";
+
+  const favorites = [];
+  favs.forEach((fav, i) => {
+    if (fav.classList.contains("active")) favorites.push(i);
+  });
+
+  // UPDATE USER
+  users[currentEmail] = {
+    ...user,
+    name: nameInput.value,
+    region: regionInput.value,
+    budget: budgetSelect.value,
+    food: selectedFood,
+    favorites: favorites
+  };
+
+  // SAVE
+  localStorage.setItem("users", JSON.stringify(users));
+  user = users[currentEmail];
+
+  setEditing(false);
+  alert("Profile saved successfully!");
+};
+
+// --------------------
+// LOGOUT
+// --------------------
+logoutBtn.onclick = () => {
+  localStorage.removeItem("currentUser");
+  window.location.href = "../index.html";
+};

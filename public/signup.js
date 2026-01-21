@@ -57,5 +57,5 @@ loginForm.addEventListener("submit", e => {
   }
 
   localStorage.setItem("currentUser", email);
-  window.location.href = "../index.html";
+ window.location.href = "../index.html";
 });
