@@ -3,70 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <title>Welcome | Pamana Adventures</title>
-  <link rel="stylesheet" href="signup.css">
+
+  <style>
+    /* RESET */
+    * {
+      box-sizing: border-box;
+      font-family: 'Gabriel Sans', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #e6f2f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* PAGE CONTAINER */
+    .page {
+      width: 100%;
+      max-width: 720px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 25px;
+      color: #444;
+    }
+
+    /* FORM CONTAINER */
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 35px 50px;
+      border-radius: 8px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    /* TOGGLE BUTTONS */
+    .toggle {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .toggle button {
+      padding: 8px 22px;
+      border: none;
+      background: #c7dede;
+      cursor: pointer;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+
+    .toggle button:hover {
+      background: #b2d0d0;
+    }
+
+    /* FORM */
+    form {
+      text-align: left;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 9px 10px;
+      font-size: 14px;
+      border: 1px solid #aaa;
+      background-color: #f1e7e3;
+      border-radius: 4px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #2c7a7b;
+      outline: none;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      font-weight: normal;
+      display: block;
+      margin-top: 6px;
+    }
+
+    button[type="submit"] {
+      display: block;
+      margin: 25px auto 0;
+      padding: 10px 36px;
+      background-color: #1f6f78;
+      color: white;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #165b61;
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Pamana Adventures</h1>
-  <p>Create an account or log in to continue</p>
+  <div class="page">
+    <h1>Pamana Adventures</h1>
+    <p>Create an account or log in to continue</p>
 
-  <div class="form-container">
+    <div class="form-container">
 
-    <div class="toggle">
-      <button onclick="showSignup()">Sign Up</button>
-      <button onclick="showLogin()">Log In</button>
-    </div>
-
-    <!-- SIGN UP FORM -->
-    <form id="signupForm">
-      <h2>Sign Up</h2>
-
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="signupEmail" placeholder="Email" required>
-      <input type="password" id="signupPassword" placeholder="Password" required>
-
-      <select id="region" required>
-        <option value="">Preferred Region</option>
-        <option>Luzon</option>
-        <option>Visayas</option>
-        <option>Mindanao</option>
-      </select>
-
-      <label>Travel Interests</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" value="Beaches"> Beaches</label>
-        <label><input type="checkbox" value="Mountains"> Mountains</label>
-        <label><input type="checkbox" value="Culture"> Culture</label>
+      <div class="toggle">
+        <button onclick="showSignup()">Sign Up</button>
+        <button onclick="showLogin()">Log In</button>
       </div>
 
-      <label>Food Preference</label>
-      <label><input type="radio" name="food" value="Seafood" required> Seafood</label>
-      <label><input type="radio" name="food" value="Meat"> Meat</label>
-      <label><input type="radio" name="food" value="Vegetarian"> Vegetarian</label>
+      <!-- SIGN UP FORM -->
+      <form id="signupForm">
+        <h2>Sign Up</h2>
 
-      <label>Budget</label>
-      <select id="budget">
-        <option>Low</option>
-        <option>Mid</option>
-        <option>High</option>
-      </select>
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="signupEmail" placeholder="Email" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
 
-      <label><input type="checkbox" required> I agree to the terms</label>
+        <label>Preferred Region</label>
+        <select id="region" required>
+          <option value="">Select</option>
+          <option>Luzon</option>
+          <option>Visayas</option>
+          <option>Mindanao</option>
+        </select>
 
-      <button type="submit">Create Account</button>
-    </form>
+        <label>Travel Interests</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Beaches"> Beaches</label>
+          <label><input type="checkbox" value="Mountains"> Mountains</label>
+          <label><input type="checkbox" value="Culture"> Culture</label>
+        </div>
 
-    <!-- LOGIN FORM -->
-    <form id="loginForm" style="display:none;">
-      <h2>Log In</h2>
+        <label>Food Preference</label>
+        <div class="radio-group">
+          <label><input type="radio" name="food" value="Seafood" required> Seafood</label>
+          <label><input type="radio" name="food" value="Meat"> Meat</label>
+          <label><input type="radio" name="food" value="Vegetarian"> Vegetarian</label>
+        </div>
 
-      <input type="email" id="loginEmail" placeholder="Email" required>
-      <input type="password" id="loginPassword" placeholder="Password" required>
+        <label>Budget</label>
+        <select id="budget">
+          <option>Low</option>
+          <option>Mid</option>
+          <option>High</option>
+        </select>
 
-      <button type="submit">Log In</button>
-    </form>
+        <label>
+          <input type="checkbox" required> I agree to the terms
+        </label>
 
+        <button type="submit">Create Account</button>
+      </form>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" style="display:none;">
+        <h2>Log In</h2>
+
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+
+        <button type="submit">Log In</button>
+      </form>
+
+    </div>
   </div>
 
   <script src="signup.js"></script>
