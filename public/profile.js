@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-  if (!currentUser) {
-    console.error("No user found");
+  const currentEmail = localStorage.getItem("currentUser");
+  const users = JSON.parse(localStorage.getItem("users")) || {};
+
+  if (!currentEmail || !users[currentEmail]) {
+    window.location.href = "../index.html";
     return;
   }
 
-  // ELEMENTS
+  const user = users[currentEmail];
+
+  // ===== ELEMENTS =====
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const regionSelect = document.getElementById("region");
@@ -20,17 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const avatarInput = document.getElementById("avatarInput");
   const changeAvatarBtn = document.getElementById("changeAvatarBtn");
 
-  // LOAD DATA (SAFE DEFAULTS)
-  nameInput.value = currentUser.name || "";
-  emailInput.value = currentUser.email || "";
-  regionSelect.value = currentUser.region || "Luzon";
-  budgetSelect.value = currentUser.budget || "Low";
+  // ===== LOAD USER DATA =====
+  nameInput.value = user.name || "";
+  emailInput.value = currentEmail;
+  regionSelect.value = user.region || "Luzon";
+  budgetSelect.value = user.budget || "Low";
 
-  if (currentUser.avatar) {
-    avatarPreview.src = currentUser.avatar;
+  if (user.avatar) {
+    avatarPreview.src = user.avatar;
   }
 
-  // EDIT MODE
+  // ===== EDIT MODE =====
   editBtn.addEventListener("click", () => {
     nameInput.disabled = false;
     regionSelect.disabled = false;
@@ -41,26 +45,27 @@ document.addEventListener("DOMContentLoaded", () => {
     saveBtn.style.display = "inline-block";
   });
 
-  // SAVE
+  // ===== SAVE CHANGES =====
   saveBtn.addEventListener("click", () => {
+    user.name = nameInput.value;
+    user.region = regionSelect.value;
+    user.budget = budgetSelect.value;
+
+    users[currentEmail] = user;
+    localStorage.setItem("users", JSON.stringify(users));
+
     nameInput.disabled = true;
     regionSelect.disabled = true;
     budgetSelect.disabled = true;
     changeAvatarBtn.disabled = true;
 
-    currentUser.name = nameInput.value;
-    currentUser.region = regionSelect.value;
-    currentUser.budget = budgetSelect.value;
-
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
-
     saveBtn.style.display = "none";
     editBtn.style.display = "inline-block";
 
-    alert("Profile saved!");
+    alert("Profile updated successfully!");
   });
 
-  // AVATAR
+  // ===== AVATAR =====
   changeAvatarBtn.addEventListener("click", () => {
     avatarInput.click();
   });
@@ -72,15 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const reader = new FileReader();
     reader.onload = () => {
       avatarPreview.src = reader.result;
-      currentUser.avatar = reader.result;
-      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      user.avatar = reader.result;
+      users[currentEmail] = user;
+      localStorage.setItem("users", JSON.stringify(users));
     };
     reader.readAsDataURL(file);
   });
 
-  // LOGOUT
+  // ===== LOGOUT =====
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("currentUser");
     window.location.href = "../index.html";
   });
+
 });
