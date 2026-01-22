@@ -20,6 +20,23 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+
+    
+@font-face {
+  font-family: 'Kawit Condensed';
+  src: url('../assets/fonts/KawitFree-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gabriel Sans';
+  src: url('../assets/fonts/GabrielSans-Trial-Medium.ttf') format('truetype');
+}
+
+
+* {
+ font-family: 'Gabriel Sans', sans-serif;
+
+}
     #bg-video {
       position: fixed;
       inset: 0;
@@ -111,6 +128,20 @@
       <option>Visayas</option>
       <option>Mindanao</option>
     </select>
+
+    <label>Food Preference</label>
+<div id="foodGroup">
+  <label><input type="radio" name="food" value="Seafood" disabled> Seafood</label>
+  <label><input type="radio" name="food" value="Meat" disabled> Meat</label>
+  <label><input type="radio" name="food" value="Vegetarian" disabled> Vegetarian</label>
+</div>
+
+<label>Travel Interests</label>
+<div id="interestGroup">
+  <label><input type="checkbox" value="Beaches" disabled> Beaches</label>
+  <label><input type="checkbox" value="Mountains" disabled> Mountains</label>
+  <label><input type="checkbox" value="Culture" disabled> Culture</label>
+</div>
 
     <label>Budget</label>
     <select id="budget" disabled>

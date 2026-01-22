@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const regionSelect = document.getElementById("region");
   const budgetSelect = document.getElementById("budget");
 
+  const foodRadios = document.querySelectorAll("input[name='food']");
+  const interestCheckboxes = document.querySelectorAll("#interestGroup input");
+
   const editBtn = document.getElementById("editBtn");
   const saveBtn = document.getElementById("saveBtn");
   const logoutBtn = document.getElementById("logoutBtn");
@@ -30,6 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
   regionSelect.value = user.region || "Luzon";
   budgetSelect.value = user.budget || "Low";
 
+  // Food
+  foodRadios.forEach(radio => {
+    radio.checked = radio.value === user.food;
+  });
+
+  // Interests
+  interestCheckboxes.forEach(cb => {
+    cb.checked = user.interests?.includes(cb.value);
+  });
+
   if (user.avatar) {
     avatarPreview.src = user.avatar;
   }
@@ -39,17 +52,27 @@ document.addEventListener("DOMContentLoaded", () => {
     nameInput.disabled = false;
     regionSelect.disabled = false;
     budgetSelect.disabled = false;
+
+    foodRadios.forEach(r => r.disabled = false);
+    interestCheckboxes.forEach(cb => cb.disabled = false);
+
     changeAvatarBtn.disabled = false;
 
     editBtn.style.display = "none";
     saveBtn.style.display = "inline-block";
   });
 
-  // ===== SAVE CHANGES =====
+  // ===== SAVE =====
   saveBtn.addEventListener("click", () => {
+
     user.name = nameInput.value;
     user.region = regionSelect.value;
     user.budget = budgetSelect.value;
+
+    user.food = document.querySelector("input[name='food']:checked")?.value || "";
+    user.interests = [...interestCheckboxes]
+      .filter(cb => cb.checked)
+      .map(cb => cb.value);
 
     users[currentEmail] = user;
     localStorage.setItem("users", JSON.stringify(users));
@@ -57,18 +80,20 @@ document.addEventListener("DOMContentLoaded", () => {
     nameInput.disabled = true;
     regionSelect.disabled = true;
     budgetSelect.disabled = true;
+
+    foodRadios.forEach(r => r.disabled = true);
+    interestCheckboxes.forEach(cb => cb.disabled = true);
+
     changeAvatarBtn.disabled = true;
 
     saveBtn.style.display = "none";
     editBtn.style.display = "inline-block";
 
-    alert("Profile updated successfully!");
+    alert("Profile updated!");
   });
 
   // ===== AVATAR =====
-  changeAvatarBtn.addEventListener("click", () => {
-    avatarInput.click();
-  });
+  changeAvatarBtn.addEventListener("click", () => avatarInput.click());
 
   avatarInput.addEventListener("change", () => {
     const file = avatarInput.files[0];
