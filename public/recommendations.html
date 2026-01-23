@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Recommended Attractions</title>
-
+<title>Personal Recommendations</title>
 
 <style>
 * {
@@ -11,24 +10,20 @@
   font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-
 body {
   margin: 0;
   background: #e6f2f3;
   padding: 30px 0;
 }
 
-
 .recommendations {
   width: 1100px;
   margin: auto;
 }
 
-
 .region-section {
   margin-bottom: 45px;
 }
-
 
 .region-section h3 {
   font-size: 16px;
@@ -36,18 +31,16 @@ body {
   margin-bottom: 18px;
 }
 
-
 .card-row {
   display: flex;
   gap: 22px;
+  flex-wrap: wrap;
 }
-
 
 .spot-card {
   width: 220px;
   text-align: center;
 }
-
 
 .spot-img {
   width: 100%;
@@ -56,7 +49,6 @@ body {
   position: relative;
   border-radius: 2px;
 }
-
 
 .heart {
   position: absolute;
@@ -67,18 +59,14 @@ body {
   cursor: pointer;
 }
 
-
 .heart.active {
   color: #e63946;
 }
 
-
 .stars {
   margin-top: 6px;
   font-size: 14px;
-  color: #000;
 }
-
 
 .spot-name {
   font-size: 14px;
@@ -88,143 +76,10 @@ body {
 </style>
 </head>
 
-
 <body>
 
+<div class="recommendations" id="recommendations"></div>
 
-<div class="recommendations">
-
-
-
-
-  <section class="region-section">
-    <h3>RECOMMENDED ATTRACTIONS IN LUZON FOR YOU</h3>
-    <div class="card-row">
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★☆☆</div>
-        <p class="spot-name">spot1</p>
-      </div>
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★★☆</div>
-        <p class="spot-name">spot2</p>
-      </div>
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★★★</div>
-        <p class="spot-name">spot3</p>
-      </div>
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★★☆</div>
-        <p class="spot-name">spot4</p>
-      </div>
-
-
-    </div>
-  </section>
-
-
-
-
-  <section class="region-section">
-    <h3>RECOMMENDED ATTRACTIONS IN VISAYAS FOR YOU</h3>
-    <div class="card-row">
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★☆☆</div>
-        <p class="spot-name">spot1</p>
-      </div>
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★★☆</div>
-        <p class="spot-name">spot2</p>
-      </div>
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★★★</div>
-        <p class="spot-name">spot3</p>
-      </div>
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★★☆</div>
-        <p class="spot-name">spot4</p>
-      </div>
-
-
-    </div>
-  </section>
-
-
- 
-  <section class="region-section">
-    <h3>RECOMMENDED ATTRACTIONS IN MINDANAO FOR YOU</h3>
-    <div class="card-row">
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★☆☆</div>
-        <p class="spot-name">spot1</p>
-      </div>
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★★☆</div>
-        <p class="spot-name">spot2</p>
-      </div>
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★★★</div>
-        <p class="spot-name">spot3</p>
-      </div>
-
-
-      <div class="spot-card">
-        <div class="spot-img"><span class="heart">♥</span></div>
-        <div class="stars">★★★★☆</div>
-        <p class="spot-name">spot4</p>
-      </div>
-
-
-    </div>
-  </section>
-
-
-</div>
-
-
-<script>
-document.querySelectorAll(".heart").forEach(heart => {
-  heart.addEventListener("click", () => {
-    heart.classList.toggle("active");
-  });
-});
-</script>
-
-
+<script src="recommendations.js"></script>
 </body>
 </html>
-
-
-
