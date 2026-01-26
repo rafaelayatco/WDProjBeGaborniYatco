@@ -37,7 +37,7 @@ const touristSpots = [
     interest: "Beaches",
     budget: "High",
     rating: 4.9,
-    image: "../assets/touristspotpics/elnidoaerials.jpg"
+    image: "../assets/touristspotpics/elnidoaerial.jpg"
   },
   {
     name: "Enchanted River",
