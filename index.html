@@ -210,23 +210,6 @@
 
 </head>
 
-<script>
-  const bgMusic = document.getElementById("bgMusic");
-  const musicBtn = document.getElementById("musicBtn");
-
-  function toggleMusic() {
-    if (bgMusic.paused) {
-      bgMusic.play();
-      musicBtn.classList.add("playing");
-      musicBtn.querySelector("span").textContent = "Pause Music";
-    } else {
-      bgMusic.pause();
-      musicBtn.classList.remove("playing");
-      musicBtn.querySelector("span").textContent = "Play Music";
-    }
-  }
-</script>
-
 <body>
 
 <video autoplay muted loop id="bg-video">
@@ -271,15 +254,6 @@
     </div>
   </div>
 
-  <audio id="bgMusic" loop>
-  <source src="assets/music/background.mp3" type="audio/mpeg">
-</audio>
-
-<button id="musicBtn" onclick="toggleMusic()">
-  <i class="fa-solid fa-music"></i>
-  <span>Play Music</span>
-</button>
-
        <div class="slideshow-container">
 
     <a class="slide" href="public/touristspots.html"><img src="assets/slides/tubbataha.webp"></a>
@@ -320,6 +294,16 @@
     </div>
   </main>
 
+ <audio id="bgMusic" loop>
+  <source src="assets/music/background.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">
+  <i class="fa-solid fa-music"></i>
+  <span>Play Music</span>
+</button>
+
+
   <footer>
     <div class="footer-container">
       <div class="footer-left">
@@ -337,5 +321,6 @@
   </footer>
 
   <script src="public/slideshowindex.js"></script>
+  <script src="public/music.js"></script>
 </body>
 </html>

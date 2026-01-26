@@ -1,84 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Personal Recommendations</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  <title>Pamana Adventures | Personal Recommendations</title>
+
+  <link rel="icon" href="../assets/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    @font-face {
+  font-family: 'Kawit Condensed';
+  src: url('../assets/fonts/KawitFree-Italic.ttf') format('truetype');
 }
 
-body {
-  margin: 0;
-  background: #e6f2f3;
-  padding: 30px 0;
+@font-face {
+  font-family: 'Gabriel Sans';
+  src: url('../assets/fonts/GabrielSans-Trial-Medium.ttf') format('truetype');
 }
 
-.recommendations {
-  width: 1100px;
-  margin: auto;
-}
 
-.region-section {
-  margin-bottom: 45px;
-}
+    body {
+      background: #0f2e36;
+      color: white;
+    }
 
-.region-section h3 {
-  font-size: 16px;
-  font-weight: 800;
-  margin-bottom: 18px;
-}
+    main {
+      padding: 50px 8%;
+      text-align: center;
+    }
 
-.card-row {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
+    h1 {
+      margin-bottom: 10px;
+    }
 
-.spot-card {
-  width: 220px;
-  text-align: center;
-}
+    main h1 {
+  font-family: 'Gabriel Sans', sans-serif;
+    }
 
-.spot-img {
-  width: 100%;
-  height: 130px;
-  background: #d9eef0;
-  position: relative;
-  border-radius: 2px;
-}
+    .subtitle {
+      opacity: 0.85;
+      margin-bottom: 40px;
+    }
 
-.heart {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  font-size: 20px;
-  color: #0a4f55;
-  cursor: pointer;
-}
+    .recommendations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-.heart.active {
-  color: #e63946;
-}
+    .rec-card {
+      background: rgba(255,255,255,0.95);
+      color: #333;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
 
-.stars {
-  margin-top: 6px;
-  font-size: 14px;
-}
+    .rec-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    }
 
-.spot-name {
-  font-size: 14px;
-  font-weight: 700;
-  margin-top: 4px;
-}
-</style>
+    .rec-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .rank-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: linear-gradient(135deg, #f7b733, #fc4a1a);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .rec-content {
+      padding: 18px;
+      text-align: left;
+    }
+
+    .rec-content h3 {
+      margin: 0 0 6px;
+      color: #256877;
+    }
+
+    .rating {
+      color: #f7b733;
+      margin-bottom: 8px;
+    }
+
+    .rec-content p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 12px;
+      background: #256877;
+      color: white;
+      border-radius: 14px;
+      font-size: 12px;
+    }
+
+    #bg-video {
+      position: fixed;   
+      top: 0;
+      left: 0;
+      width: 100vw;      
+      height: 100vh;     
+      object-fit: cover; 
+      z-index: -1;       
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="recommendations" id="recommendations"></div>
+  <video autoplay muted loop id="bg-video">
+  <source src="../assets/backgrounds/backgroundvid.mp4" type="video/mp4">
+</video>
+
+<header>
+  <div class="top">
+    <img src="../assets/logo.png" alt="Pamana Adventures Logo">
+    <div>
+      <h1>Pamana Adventures</h1>
+      <h3>Where Culture Meets Adventure</h3>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+  <a href="touristspots.html"><i class="fa-solid fa-location-dot"></i> <span>Tourist Spots</span></a>
+  <a href="culture.html"><i class="fa-solid fa-sun"></i> <span>Culture</span></a>
+  <a href="food.html"><i class="fa-solid fa-utensils"></i> <span>Food</span></a>
+  <a href="travelguide.html"><i class="fa-solid fa-suitcase"></i> <span>Travel Guide</span></a>
+  <a href="profile.html"><i class="fa-solid fa-circle-user"></i><span>Profile</span></a>
+  <a href="recommendations.html" class="active"><i class="fa-solid fa-star"></i><span>Personal Recommendations</span></a>
+  <a href="sources.html"><i class="fa-solid fa-book"></i> <span>Sources</span></a>
+</nav>
+
+<main>
+  <h1>Your Top Travel Picks ⭐</h1>
+  <p class="subtitle">Curated based on your preferences</p>
+
+  <div id="recommendations" class="recommendations-grid"></div>
+</main>
 
 <script src="recommendations.js"></script>
 </body>

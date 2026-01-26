@@ -24,3 +24,4 @@ function showSlide(n) {
 }
 /*Note: This controls a slideshow by showing the current slide and highlighting its 
 corresponding dot. It allows users to move forward, backward, or jump directly to any slide.*/
+
