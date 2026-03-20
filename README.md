@@ -165,3 +165,87 @@ When the image is clicked:
 ![alt text](assets/wireframe/10.png)
 #### Sources:
 ![alt text](assets/wireframe/11.png)
+
+# FINAL MODIFICATION PROPOSAL
+
+## CRUD Implementation on Pages
+
+The updated Pamana Adventures website will implement a full CRUD process for user data across multiple pages. The changes ensure that users can create, read, update, and delete their profile information, travel notes, food reviews, and preferences. All data will be stored in localStorage and will persist across multiple user sessions with dynamic updates needing no page reloads.
+
+### Travel Profile Page (UPDATED)
+
+The Travel Profile page serves as the central page for the user’s personal data and travel preferences. It will load the user’s profile and preferences from localStorage using a unique key based on the user’s email. Profile fields are automatically filled up with the user’s saved information from sign-up.This page also features options where users can update their travel preferences, such as region, interests, and food choices. Updates overwrite previous data in localStorage and immediately reflect on the page.
+
+**Reset Password Feature (CRUD – Update):**
+- Users can change their password by entering their current password and a new password. Validation ensures the current password is correct and the new password meets basic requirements. Upon confirmation, the password is updated in localStorage and reflected in all personalized pages.
+
+**Delete Profile Feature (CRUD – Delete):** 
+- Users can permanently delete their profile and all associated data with a single button click. This removes their data from localStorage and redirects them to the Sign-Up page.
+
+All updates are dynamic and users are provided confirmation messages for successful updates, deletions, or errors.
+
+###  Travel Notes / Journal Feature (CRUD Implementation)
+The Travel Notes section under the Travel Profile page allows users to document personal experiences, plans, or reminders. Notes are displayed in a sticky-note style format with the ability to star or pin important entries.
+
+**Create Sticky Notes (CRUD - Create):**
+- Users can write and save notes linked to a specific destination. Each note is stored in localStorage under the user’s key.
+
+**CRUD - Read:** 
+- All saved notes are dynamically displayed within the Travel Profile page for easy access.
+
+**CRUD - Update:**
+- Users can edit existing notes to update plans, reminders, or to-do lists. Changes overwrite previous data and update the display immediately.
+
+**CRUD - Delete:**
+- Users can remove notes they no longer need, which deletes the data from localStorage and removes the note from the page instantly.
+
+Notes are persistent across sessions and dynamically linked to the user’s profile. The pin option allow important entries to remain easily accessible.
+
+### Food Reviews Section (CRUD Implementation)
+
+The Food Reviews section allows users to submit, view, and manage reviews and ratings for featured dishes and food. 
+
+**Reviews (CRUD - Create):** 
+- Users can submit a review and a rating (1–5 stars) for a food item or restaurant. Reviews are stored in localStorage under the user’s profile.
+
+**CRUD - Read:** 
+- All submitted reviews are dynamically displayed under the corresponding dish or restaurant.
+
+**CRUD - Update:** 
+- Users can edit previously submitted reviews and ratings. Updates overwrite existing entries and are immediately reflected on the page.
+
+**CRUD - Delete:** 
+- Users can remove reviews at any time, which deletes the data from localStorage and updates the page instantly.
+
+### Personalized Recommendations Page (CRUD Implementation)
+
+The Personalized Recommendations page automatically generates recommendations based on the user’s saved preferences and feedback. It will utilize preference matching where it compares the user’s travel and food preferences to predefined tags for destinations and dishes based on the initial preferences in the sign-up form. Their ratings assigns a match score based on shared preferences and incorporates average ratings. Any changes in preferences, notes, or reviews update recommendations without page reload.
+
+**Reviews (CRUD - Create):**
+- Users can submit a review and a rating (1–5 stars) for the travel destination. Reviews are stored in localStorage under the user’s profile. The updated rating of the user will be averaged together with the estimate when the user first signed-up. That new rating will be reflected. 
+
+**Instant Visual Feedback (CRUD - Update):**
+- Ratings, labels, and contextual tags such as “Highly Recommended” or “Recommended for You” are updated automatically when data changes.
+
+This final modification fully implements a complete CRUD system across the website. Users have full control over their data: creating, reading, updating, and deleting profiles, travel notes, and food reviews.  These updates will ensure the Pamana Adventures website is interactive, personalized, and responsive to user input, making sure that it is your perfect travel companion.
+
+
+## Updated Wireframes
+
+#### Travel Profile:
+![alt text](assets/wireframe/updated_crud_travelprofile.png)
+
+Once "change password" is clicked:
+
+![alt text](assets/wireframe/updated_crud_newpassword.png)
+
+#### Food Recommendations:
+![alt text](assets/wireframe/updated_crud_foodpage.png)
+
+#### Personal Recommendations:
+![alt text](assets/wireframe/updated_crud_personalrecommendations.png)
+
+After the user clicks the rate me button they will be transported here:
+
+![alt text](assets/wireframe/updated_crud_reviews.png)
+
