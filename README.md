@@ -182,7 +182,7 @@ The Travel Profile page serves as the central page for the user’s personal dat
 **Delete Profile Feature (CRUD – Delete):** 
 - Users can permanently delete their profile and all associated data with a single button click. This removes their data from localStorage and redirects them to the Sign-Up page.
 
-All updates are dynamic and users are provided confirmation messages for successful updates, deletions, or errors.
+All updates are dynamic and users are provided confirmation messages for every button.
 
 ###  Travel Notes / Journal Feature (CRUD Implementation)
 The Travel Notes section under the Travel Profile page allows users to document personal experiences, plans, or reminders. Notes are displayed in a sticky-note style format with the ability to star or pin important entries.
@@ -199,7 +199,7 @@ The Travel Notes section under the Travel Profile page allows users to document 
 **CRUD - Delete:**
 - Users can remove notes they no longer need, which deletes the data from localStorage and removes the note from the page instantly.
 
-Notes are persistent across sessions and dynamically linked to the user’s profile. The pin option allow important entries to remain easily accessible.
+Notes are persistent across sessions and dynamically linked to the user’s profile. The pin option allows important entries to remain easily accessible.
 
 ### Food Reviews Section (CRUD Implementation)
 
@@ -227,7 +227,7 @@ The Personalized Recommendations page automatically generates recommendations ba
 **Instant Visual Feedback (CRUD - Update):**
 - Ratings, labels, and contextual tags such as “Highly Recommended” or “Recommended for You” are updated automatically when data changes.
 
-This final modification fully implements a complete CRUD system across the website. Users have full control over their data: creating, reading, updating, and deleting profiles, travel notes, and food reviews.  These updates will ensure the Pamana Adventures website is interactive, personalized, and responsive to user input, making sure that it is your perfect travel companion.
+This final modification fully implements a complete CRUD system across the website. Users have full control over how they manipulate the wesbite whether it's through creating, reading, updating, and deleting their profiles, travel notes, and food reviews.  These updates will ensure the Pamana Adventures website is interactive, personalized, and responsive to user input, making sure that it is your perfect travel companion.
 
 
 ## Updated Wireframes
