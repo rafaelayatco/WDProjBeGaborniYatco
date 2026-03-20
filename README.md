@@ -174,7 +174,7 @@ The updated Pamana Adventures website will implement a full CRUD process for use
 
 ### Travel Profile Page (UPDATED)
 
-The Travel Profile page serves as the central page for the user’s personal data and travel preferences. It will load the user’s profile and preferences from localStorage using a unique key based on the user’s email. Profile fields are automatically filled up with the user’s saved information from sign-up.This page also features options where users can update their travel preferences, such as region, interests, and food choices. Updates overwrite previous data in localStorage and immediately reflect on the page.
+The Travel Profile page serves as the central page for the user’s personal data and travel preferences. It will load the user’s profile and preferences from localStorage using a unique key based on the user’s email. Profile fields are automatically filled up with the user’s saved information from sign-up. This page also features options where users can update their travel preferences, such as region, interests, and food choices. Updates overwrite previous data in localStorage and immediately reflect on the page.
 
 **Reset Password Feature (CRUD – Update):**
 - Users can change their password by entering their current password and a new password. Validation ensures the current password is correct and the new password meets basic requirements. Upon confirmation, the password is updated in localStorage and reflected in all personalized pages.
@@ -219,10 +219,10 @@ The Food Reviews section allows users to submit, view, and manage reviews and ra
 
 ### Personalized Recommendations Page (CRUD Implementation)
 
-The Personalized Recommendations page automatically generates recommendations based on the user’s saved preferences and feedback. It will utilize preference matching where it compares the user’s travel and food preferences to predefined tags for destinations and dishes based on the initial preferences in the sign-up form. Their ratings assigns a match score based on shared preferences and incorporates average ratings. Any changes in preferences, notes, or reviews update recommendations without page reload.
+The Personalized Recommendations page automatically generates recommendations based on the user’s saved preferences and feedback. It will utilize preference matching where it compares the user’s travel and food preferences to predefined tags for destinations and dishes based on the initial preferences in the sign-up form. Their ratings assign a match score based on shared preferences and incorporates average ratings. Any changes in preferences, notes, or reviews update recommendations without page reload.
 
 **Reviews (CRUD - Create):**
-- Users can submit a review and a rating (1–5 stars) for the travel destination. Reviews are stored in localStorage under the user’s profile. The updated rating of the user will be averaged together with the estimate when the user first signed-up. That new rating will be reflected. 
+- Users can submit a review and a rating (1–5 stars) for the travel destination. Reviews are stored in localStorage under the user’s profile. The updated rating of the user will be averaged together with the estimate when the user first signed-up. The new rating will be reflected immediately. 
 
 **Instant Visual Feedback (CRUD - Update):**
 - Ratings, labels, and contextual tags such as “Highly Recommended” or “Recommended for You” are updated automatically when data changes.
