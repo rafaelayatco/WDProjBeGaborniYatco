@@ -227,7 +227,7 @@ The Personalized Recommendations page automatically generates recommendations ba
 **Instant Visual Feedback (CRUD - Update):**
 - Ratings, labels, and contextual tags such as “Highly Recommended” or “Recommended for You” are updated automatically when data changes.
 
-This final modification fully implements a complete CRUD system across the website. Users have full control over how they manipulate the wesbite whether it's through creating, reading, updating, and deleting their profiles, travel notes, and food reviews.  These updates will ensure the Pamana Adventures website is interactive, personalized, and responsive to user input, making sure that it is your perfect travel companion.
+This final modification fully implements a complete CRUD system across the website. Users have full control over how they manipulate the website whether it's through creating, reading, updating, and deleting their profiles, travel notes, and food reviews.  These updates will ensure the Pamana Adventures website is interactive, personalized, and responsive to user input, making sure that it is your perfect travel companion.
 
 
 ## Updated Wireframes
