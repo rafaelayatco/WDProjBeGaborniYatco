@@ -20,23 +20,10 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+    * {
+      font-family: 'Gabriel Sans', sans-serif;
+    }
 
-    
-@font-face {
-  font-family: 'Kawit Condensed';
-  src: url('../assets/fonts/KawitFree-Italic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Gabriel Sans';
-  src: url('../assets/fonts/GabrielSans-Trial-Medium.ttf') format('truetype');
-}
-
-
-* {
- font-family: 'Gabriel Sans', sans-serif;
-
-}
     #bg-video {
       position: fixed;
       inset: 0;
@@ -51,7 +38,7 @@
       margin: 40px auto;
       background: rgba(255,255,255,0.95);
       padding: 30px;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     .avatar-section {
@@ -77,7 +64,69 @@
       padding: 8px 14px;
       cursor: pointer;
     }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-wrapper input {
+      width: 100%;
+      padding-right: 60px;
+    }
+
+    #togglePassword {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #message.error { color: red; }
+    #message.success { color: green; }
+
+    #notesContainer {
+  margin-top: 15px;
+  display: grid;
+  gap: 10px;
+}
+
+.note-card {
+  background: #fff8c6;
+  padding: 12px;
+  border-radius: 10px;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.note-card.pinned {
+  border: 2px solid #ff9800;
+  background: #fff3a6;
+}
+
+.note-card button {
+  margin-right: 5px;
+  font-size: 12px;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 5px;
+  padding: 8px;
+}
   </style>
+
 </head>
 
 <body>
@@ -131,18 +180,18 @@
     </select>
 
     <label>Food Preference</label>
-<div id="foodGroup">
-  <label><input type="radio" name="food" value="Seafood" disabled> Seafood</label>
-  <label><input type="radio" name="food" value="Meat" disabled> Meat</label>
-  <label><input type="radio" name="food" value="Vegetarian" disabled> Vegetarian</label>
-</div>
+    <div id="foodGroup">
+      <label><input type="radio" name="food" value="Seafood" disabled> Seafood</label>
+      <label><input type="radio" name="food" value="Meat" disabled> Meat</label>
+      <label><input type="radio" name="food" value="Vegetarian" disabled> Vegetarian</label>
+    </div>
 
-<label>Travel Interests</label>
-<div id="interestGroup">
-  <label><input type="checkbox" value="Beaches" disabled> Beaches</label>
-  <label><input type="checkbox" value="Mountains" disabled> Mountains</label>
-  <label><input type="checkbox" value="Culture" disabled> Culture</label>
-</div>
+    <label>Travel Interests</label>
+    <div id="interestGroup">
+      <label><input type="checkbox" value="Beaches" disabled> Beaches</label>
+      <label><input type="checkbox" value="Mountains" disabled> Mountains</label>
+      <label><input type="checkbox" value="Culture" disabled> Culture</label>
+    </div>
 
     <label>Budget</label>
     <select id="budget" disabled>
@@ -151,9 +200,46 @@
       <option>High</option>
     </select>
 
+    <label>Change Password</label>
+    <input id="currentPassword" type="password" placeholder="Current password">
+    <input id="newPassword" type="password" placeholder="New password">
+
+    <button id="resetPasswordBtn">Reset Password</button>
+
+    <p id="message"></p>
+
+    <br>
+
     <button id="editBtn">Edit Profile</button>
     <button id="saveBtn" style="display:none;">Save</button>
     <button id="logoutBtn">Logout</button>
+    <button id="deleteProfileBtn">Delete Profile</button>
+
+    <hr>
+
+<h3>Travel Notes</h3>
+
+<select id="noteDestination">
+  <option>Banaue Rice Terraces</option>
+  <option>Boracay</option>
+  <option>Chocolate Hills</option>
+  <option>Cloud 9</option>
+  <option>El Nido</option>
+  <option>Enchanted River</option>
+  <option>Honda Bay</option>
+  <option>Hundred Islands</option>
+  <option>Magellan’s Cross</option>
+  <option>Mount Apo</option>
+  <option>Puerto Princesa Underground River</option>
+  <option>Siquijor</option>
+  <option>Tubbataha Reefs</option>
+</select>
+
+<textarea id="noteText" placeholder="Write your travel note..."></textarea>
+
+<button id="addNoteBtn">Add Note</button>
+
+<div id="notesContainer"></div>
 
   </div>
 </main>

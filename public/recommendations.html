@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pamana Adventures Homepage" />
+  <meta name="keywords" content="HTML, Culture, Travel, Philippines" />
+  <meta name="author" content="R YATCO S GABORNI" />
 
   <title>Pamana Adventures | Personal Recommendations</title>
 
@@ -127,6 +130,30 @@
       object-fit: cover; 
       z-index: -1;       
     }
+
+    .review-box button {
+  margin-top: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #1f6f78, #256877);
+  color: white;
+
+  font-family: 'Gabriel Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  transition: all 0.25s ease;
+}
+
+.review-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #256877, #3aa6b4);
+}
   </style>
 </head>
 
@@ -162,6 +189,8 @@
   <p class="subtitle">Curated based on your preferences</p>
 
   <div id="recommendations" class="recommendations-grid"></div>
+
+  
 </main>
 
 <script src="recommendations.js"></script>

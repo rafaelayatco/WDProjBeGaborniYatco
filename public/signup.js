@@ -1,4 +1,4 @@
-// ===== GET ELEMENTS =====
+
 const signupForm = document.getElementById("signupForm");
 const loginForm = document.getElementById("loginForm");
 
@@ -11,10 +11,10 @@ const nameInput = document.getElementById("name");
 const region = document.getElementById("region");
 const budget = document.getElementById("budget");
 
-// ===== USERS STORAGE =====
+
 const users = JSON.parse(localStorage.getItem("users")) || {};
 
-// ===== TOGGLE FORMS =====
+
 function showSignup() {
   signupForm.style.display = "block";
   loginForm.style.display = "none";
@@ -25,7 +25,7 @@ function showLogin() {
   loginForm.style.display = "block";
 }
 
-// ===== SIGN UP =====
+
 signupForm.addEventListener("submit", e => {
   e.preventDefault();
 
@@ -52,7 +52,6 @@ signupForm.addEventListener("submit", e => {
   window.location.href = "../index.html";
 });
 
-// ===== LOG IN =====
 loginForm.addEventListener("submit", e => {
   e.preventDefault();
 
